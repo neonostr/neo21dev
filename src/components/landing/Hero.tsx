@@ -4,7 +4,7 @@ export const Hero = () => {
       <div className="max-w-3xl">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
           Building tools for a{' '}
-          <span className="text-gradient whitespace-nowrap">free society</span>
+          <span className="text-gradient">free society</span>
         </h1>
         
         <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
