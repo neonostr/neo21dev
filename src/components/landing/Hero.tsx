@@ -1,7 +1,7 @@
 import { ExternalLink } from 'lucide-react';
 export const Hero = () => {
   return <section className="py-20 md:py-32">
-      <div className="max-w-3xl">
+      <div className="max-w-4xl lg:max-w-none">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
           Building tools for a{' '}
           <span className="text-gradient whitespace-nowrap">free society</span>
