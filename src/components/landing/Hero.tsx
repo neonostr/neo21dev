@@ -3,11 +3,11 @@ export const Hero = () => {
   return <section className="py-20 md:py-32">
       <div className="max-w-3xl">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-          I build tools that <span className="text-gradient">respect you </span>
+          I build things that <span className="text-gradient">respect you</span>
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-          Web apps, Bitcoin tools, and Nostr utilities. Products, not data. Privacy by default.
+          No tracking. No data collection. Simple as that.
         </p>
 
         <div className="flex flex-wrap gap-4">
