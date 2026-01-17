@@ -42,7 +42,7 @@ export const projects: Project[] = [
     category: "education",
     url: "https://whybitcoin101.com",
     featured: true,
-    order: 2,
+    order: 3,
   },
   {
     id: "3",
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     category: "nostr",
     url: "https://nostr2rss.com",
     featured: true,
-    order: 3,
+    order: 2,
   },
   {
     id: "4",
@@ -111,8 +111,6 @@ export const projects: Project[] = [
   },
 ];
 
-export const featuredProjects = projects
-  .filter((p) => p.featured)
-  .sort((a, b) => a.order - b.order);
+export const featuredProjects = projects.filter((p) => p.featured).sort((a, b) => a.order - b.order);
 
 export const allProjects = [...projects].sort((a, b) => a.order - b.order);
