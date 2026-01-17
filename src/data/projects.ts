@@ -28,7 +28,7 @@ export const projects: Project[] = [
   {
     id: "1",
     name: "Cony",
-    description: "A privacy focused Bitcoin currency converter and price trackers.",
+    description: "A privacy focused Bitcoin currency converter.",
     category: "bitcoin",
     url: "https://converter.neo21.dev",
     featured: true,
@@ -43,10 +43,10 @@ export const projects: Project[] = [
   },
   {
     id: "3",
-    name: "Nostr Client",
-    description: "Lightweight Nostr client built for speed and simplicity.",
+    name: "Nostr2RSS",
+    description: "Subscribe to Nostr authors in your RSS reader.",
     category: "nostr",
-    url: "https://example.com",
+    url: "https://nostr2rss.com",
     featured: true,
   },
   {
