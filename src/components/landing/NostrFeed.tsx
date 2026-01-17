@@ -14,7 +14,14 @@ const RELAYS = [
 const AUTHOR_NPUB = 'npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g';
 
 // Add new hashtags here (without the # symbol)
-const HASHTAGS = ['convy', 'yestr'];
+const BASE_HASHTAGS = ['convy', 'yestr'];
+
+// Generate case variations for case-insensitive matching at relay level
+const HASHTAGS = BASE_HASHTAGS.flatMap(tag => [
+  tag.toLowerCase(),
+  tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase(),
+  tag.toUpperCase(),
+]);
 // ==============================================================
 
 interface NostrNote {
@@ -36,6 +43,10 @@ export const NostrFeed = () => {
     const decoded = nip19.decode(AUTHOR_NPUB);
     const authorPubkey = decoded.data as string;
 
+    console.log('Nostr: Connecting to relays:', RELAYS);
+    console.log('Nostr: Author pubkey:', authorPubkey);
+    console.log('Nostr: Filtering for hashtags:', HASHTAGS);
+
     const notesMap = new Map<string, NostrNote>();
 
     // Create subscription requests for each relay + hashtag combo (OR logic)
@@ -53,6 +64,8 @@ export const NostrFeed = () => {
 
     const sub = pool.subscribeMap(requests, {
       onevent(event) {
+        console.log('Nostr: Received event:', event.id, event.tags);
+        
         // Skip replies (events that have an "e" tag are replies)
         const isReply = event.tags.some((tag) => tag[0] === 'e');
         if (isReply) return;
@@ -73,6 +86,7 @@ export const NostrFeed = () => {
         setLoading(false);
       },
       oneose() {
+        console.log('Nostr: End of stored events received');
         setLoading(false);
       },
     });
@@ -96,10 +110,10 @@ export const NostrFeed = () => {
     return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
   };
 
-  // Strip hashtags from content for cleaner display
+  // Strip hashtags from content for cleaner display (case-insensitive)
   const cleanContent = (content: string) => {
     let cleaned = content;
-    HASHTAGS.forEach((tag) => {
+    BASE_HASHTAGS.forEach((tag) => {
       const regex = new RegExp(`#${tag}\\b`, 'gi');
       cleaned = cleaned.replace(regex, '');
     });
@@ -153,7 +167,7 @@ export const NostrFeed = () => {
 
       <p className="text-xs text-muted-foreground mt-6 text-center">
         Updates pulled from Nostr using{' '}
-        {HASHTAGS.map((h) => (
+        {BASE_HASHTAGS.map((h) => (
           <code key={h} className="text-primary mx-1">
             #{h}
           </code>
