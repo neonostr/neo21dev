@@ -10,7 +10,7 @@ const RELAYS = ["wss://nostr.land", "wss://relay.primal.net", "wss://relay.damus
 const AUTHOR_NPUB = "npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g";
 
 // Add new hashtags here (without the # symbol)
-const HASHTAGS = ["convy", "Convy", "yestr", "Yestr"];
+const HASHTAGS = ["convy", "whybitcoin101"];
 // ==============================================================
 
 interface NostrNote {
