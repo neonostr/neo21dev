@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { archiveProjects, ProjectCategory, categoryLabels } from '@/data/projects';
+import { allProjects, ProjectCategory, categoryLabels } from '@/data/projects';
 import { ProjectCard } from './ProjectCard';
 import { Grid3X3 } from 'lucide-react';
 
@@ -9,8 +9,8 @@ export const ProjectArchive = () => {
   const [filter, setFilter] = useState<ProjectCategory | 'all'>('all');
   
   const filteredProjects = filter === 'all' 
-    ? archiveProjects 
-    : archiveProjects.filter((p) => p.category === filter);
+    ? allProjects 
+    : allProjects.filter((p) => p.category === filter);
 
   return (
     <section className="py-16">
