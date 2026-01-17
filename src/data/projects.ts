@@ -36,7 +36,7 @@ export const projects: Project[] = [
   {
     id: "2",
     name: "WhyBitcoin101",
-    description: "Explore Bitcoin and collaborate to build the ultimate orange pill.",
+    description: "Share the why behind Bitcoin with friends and loved ones.",
     category: "bitcoin",
     url: "https://whybitcoin101.com",
     featured: true,
