@@ -38,39 +38,44 @@ export const NostrFeed = () => {
 
     const notesMap = new Map<string, NostrNote>();
 
-    const filter: Filter = {
-      kinds: [1],
-      authors: [authorPubkey],
-      '#t': HASHTAGS,
-      limit: 20,
-    };
+    // Create subscription requests for each relay + hashtag combo (OR logic)
+    const requests = RELAYS.flatMap(url =>
+      HASHTAGS.map(hashtag => ({
+        url,
+        filter: {
+          kinds: [1],
+          authors: [authorPubkey],
+          '#t': [hashtag],
+          limit: 20,
+        } as Filter,
+      }))
+    );
 
-    const sub = pool.subscribeMany(RELAYS, filter, {
+    const sub = pool.subscribeMap(requests, {
       onevent(event) {
         // Skip replies (events that have an "e" tag are replies)
         const isReply = event.tags.some((tag) => tag[0] === 'e');
-          if (isReply) return;
+        if (isReply) return;
 
-          const note: NostrNote = {
-            id: event.id,
-            content: event.content,
-            created_at: event.created_at,
-          };
+        const note: NostrNote = {
+          id: event.id,
+          content: event.content,
+          created_at: event.created_at,
+        };
 
-          notesMap.set(event.id, note);
+        notesMap.set(event.id, note);
 
-          // Update state with sorted notes
-          const sortedNotes = Array.from(notesMap.values()).sort(
-            (a, b) => b.created_at - a.created_at
-          );
-          setNotes(sortedNotes);
-          setLoading(false);
-        },
-        oneose() {
-          setLoading(false);
-        },
-      }
-    );
+        // Update state with sorted notes
+        const sortedNotes = Array.from(notesMap.values()).sort(
+          (a, b) => b.created_at - a.created_at
+        );
+        setNotes(sortedNotes);
+        setLoading(false);
+      },
+      oneose() {
+        setLoading(false);
+      },
+    });
 
     // Cleanup on unmount
     return () => {
