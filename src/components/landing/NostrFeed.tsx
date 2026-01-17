@@ -1,23 +1,19 @@
-import { useState, useEffect, useRef } from 'react';
-import { Zap, ExternalLink, RefreshCw } from 'lucide-react';
-import { SimplePool } from 'nostr-tools/pool';
-import { nip19 } from 'nostr-tools';
-import type { Filter } from 'nostr-tools/filter';
+import { useState, useEffect, useRef } from "react";
+import { Zap, ExternalLink, RefreshCw } from "lucide-react";
+import { SimplePool } from "nostr-tools/pool";
+import { nip19 } from "nostr-tools";
+import type { Filter } from "nostr-tools/filter";
 
 // ============ NOSTR CONFIG - Edit these as needed ============
-const RELAYS = [
-  'wss://nostr.land',
-  'wss://relay.primal.net',
-  'wss://relay.damus.io',
-];
+const RELAYS = ["wss://nostr.land", "wss://relay.primal.net", "wss://relay.damus.io"];
 
-const AUTHOR_NPUB = 'npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g';
+const AUTHOR_NPUB = "npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g";
 
 // Add new hashtags here (without the # symbol)
-const BASE_HASHTAGS = ['convy', 'yestr'];
+const BASE_HASHTAGS = ["convy", "yestr", "bitcoin"];
 
 // Generate case variations for case-insensitive matching at relay level
-const HASHTAGS = BASE_HASHTAGS.flatMap(tag => [
+const HASHTAGS = BASE_HASHTAGS.flatMap((tag) => [
   tag.toLowerCase(),
   tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase(),
   tag.toUpperCase(),
@@ -43,31 +39,31 @@ export const NostrFeed = () => {
     const decoded = nip19.decode(AUTHOR_NPUB);
     const authorPubkey = decoded.data as string;
 
-    console.log('Nostr: Connecting to relays:', RELAYS);
-    console.log('Nostr: Author pubkey:', authorPubkey);
-    console.log('Nostr: Filtering for hashtags:', HASHTAGS);
+    console.log("Nostr: Connecting to relays:", RELAYS);
+    console.log("Nostr: Author pubkey:", authorPubkey);
+    console.log("Nostr: Filtering for hashtags:", HASHTAGS);
 
     const notesMap = new Map<string, NostrNote>();
 
     // Create subscription requests for each relay + hashtag combo (OR logic)
-    const requests = RELAYS.flatMap(url =>
-      HASHTAGS.map(hashtag => ({
+    const requests = RELAYS.flatMap((url) =>
+      HASHTAGS.map((hashtag) => ({
         url,
         filter: {
           kinds: [1],
           authors: [authorPubkey],
-          '#t': [hashtag],
+          "#t": [hashtag],
           limit: 20,
         } as Filter,
-      }))
+      })),
     );
 
     const sub = pool.subscribeMap(requests, {
       onevent(event) {
-        console.log('Nostr: Received event:', event.id, event.tags);
-        
+        console.log("Nostr: Received event:", event.id, event.tags);
+
         // Skip replies (events that have an "e" tag are replies)
-        const isReply = event.tags.some((tag) => tag[0] === 'e');
+        const isReply = event.tags.some((tag) => tag[0] === "e");
         if (isReply) return;
 
         const note: NostrNote = {
@@ -79,14 +75,12 @@ export const NostrFeed = () => {
         notesMap.set(event.id, note);
 
         // Update state with sorted notes
-        const sortedNotes = Array.from(notesMap.values()).sort(
-          (a, b) => b.created_at - a.created_at
-        );
+        const sortedNotes = Array.from(notesMap.values()).sort((a, b) => b.created_at - a.created_at);
         setNotes(sortedNotes);
         setLoading(false);
       },
       oneose() {
-        console.log('Nostr: End of stored events received');
+        console.log("Nostr: End of stored events received");
         setLoading(false);
       },
     });
@@ -104,18 +98,18 @@ export const NostrFeed = () => {
     const diff = now.getTime() - date.getTime();
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-    if (days === 0) return 'Today';
-    if (days === 1) return 'Yesterday';
+    if (days === 0) return "Today";
+    if (days === 1) return "Yesterday";
     if (days < 7) return `${days} days ago`;
-    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
   };
 
   // Strip hashtags from content for cleaner display (case-insensitive)
   const cleanContent = (content: string) => {
     let cleaned = content;
     BASE_HASHTAGS.forEach((tag) => {
-      const regex = new RegExp(`#${tag}\\b`, 'gi');
-      cleaned = cleaned.replace(regex, '');
+      const regex = new RegExp(`#${tag}\\b`, "gi");
+      cleaned = cleaned.replace(regex, "");
     });
     return cleaned.trim();
   };
@@ -145,28 +139,21 @@ export const NostrFeed = () => {
         </div>
       ) : notes.length === 0 ? (
         <p className="text-center text-muted-foreground py-12">
-          No updates found with {HASHTAGS.map((h) => `#${h}`).join(' or ')}
+          No updates found with {HASHTAGS.map((h) => `#${h}`).join(" or ")}
         </p>
       ) : (
         <div className="space-y-4">
           {notes.map((note) => (
-            <article
-              key={note.id}
-              className="p-4 rounded-lg border bg-card/50 hover:bg-card transition-colors"
-            >
-              <p className="text-foreground leading-relaxed mb-2">
-                {cleanContent(note.content)}
-              </p>
-              <time className="text-xs text-muted-foreground">
-                {formatDate(note.created_at)}
-              </time>
+            <article key={note.id} className="p-4 rounded-lg border bg-card/50 hover:bg-card transition-colors">
+              <p className="text-foreground leading-relaxed mb-2">{cleanContent(note.content)}</p>
+              <time className="text-xs text-muted-foreground">{formatDate(note.created_at)}</time>
             </article>
           ))}
         </div>
       )}
 
       <p className="text-xs text-muted-foreground mt-6 text-center">
-        Updates pulled from Nostr using{' '}
+        Updates pulled from Nostr using{" "}
         {BASE_HASHTAGS.map((h) => (
           <code key={h} className="text-primary mx-1">
             #{h}
