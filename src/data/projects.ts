@@ -27,8 +27,8 @@ export const categoryColors: Record<ProjectCategory, string> = {
 export const projects: Project[] = [
   {
     id: "1",
-    name: "Currency Converter",
-    description: "A privacy focused Bitcoin currency converter.",
+    name: "Cony",
+    description: "A privacy focused Bitcoin currency converter and price trackers.",
     category: "bitcoin",
     url: "https://converter.neo21.dev",
     featured: true,
