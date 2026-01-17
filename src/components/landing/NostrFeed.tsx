@@ -42,7 +42,7 @@ export const NostrFeed = () => {
           kinds: [1],
           authors: [authorPubkey],
           "#t": [hashtag],
-          limit: 20,
+          limit: 50,
         } as Filter,
       })),
     );
