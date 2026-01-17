@@ -5,7 +5,7 @@ import { nip19 } from "nostr-tools";
 import type { Filter } from "nostr-tools/filter";
 
 // ============ NOSTR CONFIG - Edit these as needed ============
-const RELAYS = ["wss://nostr.land", "wss://relay.primal.net", "wss://relay.damus.io"];
+const RELAYS = ["wss://nostr.land", "wss://relay.primal.net", "wss://relay.damus.io", "wss://nostr.wine"];
 
 const AUTHOR_NPUB = "npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g";
 
