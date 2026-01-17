@@ -7,6 +7,7 @@ export interface Project {
   category: ProjectCategory;
   url: string;
   featured?: boolean;
+  order: number;
 }
 
 export const categoryLabels: Record<ProjectCategory, string> = {
@@ -32,6 +33,7 @@ export const projects: Project[] = [
     category: "bitcoin",
     url: "https://converter.neo21.dev",
     featured: true,
+    order: 1,
   },
   {
     id: "2",
@@ -40,6 +42,7 @@ export const projects: Project[] = [
     category: "education",
     url: "https://whybitcoin101.com",
     featured: true,
+    order: 2,
   },
   {
     id: "3",
@@ -48,6 +51,7 @@ export const projects: Project[] = [
     category: "nostr",
     url: "https://nostr2rss.com",
     featured: true,
+    order: 3,
   },
   {
     id: "4",
@@ -55,6 +59,7 @@ export const projects: Project[] = [
     description: "Interactive guide to understanding Bitcoin fundamentals.",
     category: "education",
     url: "https://example.com",
+    order: 4,
   },
   {
     id: "5",
@@ -62,6 +67,7 @@ export const projects: Project[] = [
     description: "Educational platform for Lightning Network concepts.",
     category: "education",
     url: "https://example.com",
+    order: 5,
   },
   {
     id: "6",
@@ -69,6 +75,7 @@ export const projects: Project[] = [
     description: "Discover and compare Nostr relays by performance.",
     category: "nostr",
     url: "https://example.com",
+    order: 6,
   },
   {
     id: "7",
@@ -76,6 +83,7 @@ export const projects: Project[] = [
     description: "Privacy-preserving Bitcoin UTXO management tool.",
     category: "bitcoin",
     url: "https://example.com",
+    order: 7,
   },
   {
     id: "8",
@@ -83,6 +91,7 @@ export const projects: Project[] = [
     description: "Secure Nostr key management and backup utility.",
     category: "nostr",
     url: "https://example.com",
+    order: 8,
   },
   {
     id: "9",
@@ -90,6 +99,7 @@ export const projects: Project[] = [
     description: "Comprehensive guide to digital privacy practices.",
     category: "education",
     url: "https://example.com",
+    order: 9,
   },
   {
     id: "10",
@@ -97,8 +107,12 @@ export const projects: Project[] = [
     description: "Minimalist Bitcoin block explorer focused on privacy.",
     category: "bitcoin",
     url: "https://example.com",
+    order: 10,
   },
 ];
 
-export const featuredProjects = projects.filter((p) => p.featured);
-export const archiveProjects = projects.filter((p) => !p.featured);
+export const featuredProjects = projects
+  .filter((p) => p.featured)
+  .sort((a, b) => a.order - b.order);
+
+export const allProjects = [...projects].sort((a, b) => a.order - b.order);
