@@ -34,7 +34,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: "2",
+    id: "3",
     name: "WhyBitcoin101",
     description: "Share the why behind Bitcoin with friends and loved ones.",
     category: "education",
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: "3",
+    id: "2",
     name: "Nostr2RSS",
     description: "Subscribe to Nostr authors in your RSS reader.",
     category: "nostr",
