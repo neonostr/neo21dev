@@ -5,19 +5,18 @@ import { nip19 } from "nostr-tools";
 import type { Filter } from "nostr-tools/filter";
 
 // ============ NOSTR CONFIG - Edit these as needed ============
-const RELAYS = ["wss://nostr.land", "wss://relay.primal.net", "wss://relay.damus.io"];
+const RELAYS = [
+  "wss://relay.nostr.band",  // Great for hashtag indexing
+  "wss://nos.lol",
+  "wss://relay.damus.io",
+  "wss://relay.primal.net",
+  "wss://nostr.land",
+];
 
 const AUTHOR_NPUB = "npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g";
 
-// Add new hashtags here (without the # symbol)
-const BASE_HASHTAGS = ["convy", "yestr", "bitcoin"];
-
-// Generate case variations for case-insensitive matching at relay level
-const HASHTAGS = BASE_HASHTAGS.flatMap((tag) => [
-  tag.toLowerCase(),
-  tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase(),
-  tag.toUpperCase(),
-]);
+// Add new hashtags here (without the # symbol) - lowercase only per Nostr convention
+const HASHTAGS = ["convy", "yestr", "bitcoin"];
 // ==============================================================
 
 interface NostrNote {
@@ -53,7 +52,7 @@ export const NostrFeed = () => {
           kinds: [1],
           authors: [authorPubkey],
           "#t": [hashtag],
-          limit: 20,
+          limit: 50,
         } as Filter,
       })),
     );
@@ -107,7 +106,7 @@ export const NostrFeed = () => {
   // Strip hashtags from content for cleaner display (case-insensitive)
   const cleanContent = (content: string) => {
     let cleaned = content;
-    BASE_HASHTAGS.forEach((tag) => {
+    HASHTAGS.forEach((tag) => {
       const regex = new RegExp(`#${tag}\\b`, "gi");
       cleaned = cleaned.replace(regex, "");
     });
@@ -154,7 +153,7 @@ export const NostrFeed = () => {
 
       <p className="text-xs text-muted-foreground mt-6 text-center">
         Updates pulled from Nostr using{" "}
-        {BASE_HASHTAGS.map((h) => (
+        {HASHTAGS.map((h) => (
           <code key={h} className="text-primary mx-1">
             #{h}
           </code>
