@@ -55,10 +55,10 @@ export const projects: Project[] = [
   },
   {
     id: "4",
-    name: "Bitcoin Basics",
-    description: "Interactive guide to understanding Bitcoin fundamentals.",
+    name: "The Ultimate Orange Pill",
+    description: "Helping the world understand why Bitcoin matters, together. Coordinated on Nostr.",
     category: "education",
-    url: "https://example.com",
+    url: "https://whybitcoin101.com/mission",
     order: 4,
   },
   {
