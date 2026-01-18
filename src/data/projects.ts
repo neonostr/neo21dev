@@ -80,8 +80,7 @@ export const projects: Project[] = [
   {
     id: "7",
     name: "WTF Happened In 2030",
-    description:
-      "This website shows a fictional scenario designed to illustrate the importance of Bitcoin self custody.",
+    description: "A fictional scenario designed to illustrate the importance of Bitcoin self custody.",
     category: "education",
     url: "https://wtfhappenedin2030.com",
     order: 7,
