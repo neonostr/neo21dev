@@ -15,6 +15,7 @@ export const categoryLabels: Record<ProjectCategory, string> = {
   bitcoin: "Bitcoin Tool",
   nostr: "Nostr Tool",
   education: "Educational",
+  other: "Other",
 };
 
 export const categoryColors: Record<ProjectCategory, string> = {
