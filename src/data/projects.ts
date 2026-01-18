@@ -79,10 +79,11 @@ export const projects: Project[] = [
   },
   {
     id: "7",
-    name: "UTXO Tracker",
-    description: "Privacy-preserving Bitcoin UTXO management tool.",
-    category: "bitcoin",
-    url: "https://example.com",
+    name: "WTF Happened In 2030",
+    description:
+      "This website shows a fictional scenario designed to illustrate the importance of Bitcoin self custody.",
+    category: "education",
+    url: "https://wtfhappenedin2030.com",
     order: 7,
   },
   {
