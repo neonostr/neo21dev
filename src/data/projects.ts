@@ -63,10 +63,10 @@ export const projects: Project[] = [
   },
   {
     id: "5",
-    name: "Lightning Learn",
-    description: "Educational platform for Lightning Network concepts.",
-    category: "education",
-    url: "https://example.com",
+    name: "Daylight",
+    description: "Know when the sun rises and sets. Track daylight hours anywhere in the world.",
+    category: "other",
+    url: "https://daylight.neo21.dev",
     order: 5,
   },
   {
