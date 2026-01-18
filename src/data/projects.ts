@@ -11,15 +11,14 @@ export interface Project {
 }
 
 export const categoryLabels: Record<ProjectCategory, string> = {
-  app: "Web App",
-  bitcoin: "Bitcoin Tool",
-  nostr: "Nostr Tool",
-  education: "Educational",
   other: "Other",
+  bitcoin: "Bitcoin",
+  nostr: "Nostr",
+  education: "Educational",
 };
 
 export const categoryColors: Record<ProjectCategory, string> = {
-  app: "bg-primary/10 text-primary",
+  other: "bg-primary/10 text-primary",
   bitcoin: "bg-orange-500/10 text-orange-600",
   nostr: "bg-purple-500/10 text-purple-600",
   education: "bg-emerald-500/10 text-emerald-600",
