@@ -3,7 +3,7 @@ import { allProjects, ProjectCategory, categoryLabels } from '@/data/projects';
 import { ProjectCard } from './ProjectCard';
 import { Grid3X3 } from 'lucide-react';
 
-const categories: (ProjectCategory | 'all')[] = ['all', 'app', 'bitcoin', 'nostr', 'education'];
+const categories: (ProjectCategory | 'all')[] = ['all', 'other', 'bitcoin', 'nostr', 'education'];
 
 export const ProjectArchive = () => {
   const [filter, setFilter] = useState<ProjectCategory | 'all'>('all');
