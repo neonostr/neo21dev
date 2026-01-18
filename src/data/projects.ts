@@ -71,10 +71,10 @@ export const projects: Project[] = [
   },
   {
     id: "6",
-    name: "Nostr Relay Finder",
-    description: "Discover and compare Nostr relays by performance.",
-    category: "nostr",
-    url: "https://example.com",
+    name: "Youtube Client",
+    description: "Stop the time thieves and reclaim control. Watch on your terms.",
+    category: "other",
+    url: "https://tube.neo21.dev/",
     order: 6,
   },
   {
