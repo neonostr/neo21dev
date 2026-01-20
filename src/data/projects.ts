@@ -85,30 +85,6 @@ export const projects: Project[] = [
     url: "https://wtfhappenedin2030.com",
     order: 7,
   },
-  {
-    id: "8",
-    name: "Key Manager",
-    description: "Secure Nostr key management and backup utility.",
-    category: "nostr",
-    url: "https://example.com",
-    order: 8,
-  },
-  {
-    id: "9",
-    name: "Privacy Guide",
-    description: "Comprehensive guide to digital privacy practices.",
-    category: "education",
-    url: "https://example.com",
-    order: 9,
-  },
-  {
-    id: "10",
-    name: "Block Explorer",
-    description: "Minimalist Bitcoin block explorer focused on privacy.",
-    category: "bitcoin",
-    url: "https://example.com",
-    order: 10,
-  },
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured).sort((a, b) => a.order - b.order);
