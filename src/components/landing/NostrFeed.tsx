@@ -9,7 +9,7 @@ const RELAYS = ["wss://nostr.land", "wss://relay.primal.net", "wss://relay.damus
 const AUTHOR_NPUB = "npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g";
 
 // Add new hashtags here (without the # symbol)
-const HASHTAGS = ["convy", "daylight", "neo21dev", "nostr2rss", "Nostr2RSS", "whybitcoin101"];
+const HASHTAGS = ["convy", "Convy", "daylight", "neo21dev", "nostr2rss", "Nostr2RSS", "whybitcoin101"];
 // ==============================================================
 
 interface NostrNote {
@@ -88,17 +88,11 @@ export const NostrFeed = () => {
   const renderContent = (content: string) => {
     const urlRegex = /(https?:\/\/[^\s]+)/g;
     const parts = content.split(urlRegex);
-    
+
     return parts.map((part, index) => {
       if (urlRegex.test(part)) {
         return (
-          <a
-            key={index}
-            href={part}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline break-all"
-          >
+          <a key={index} href={part} target="_blank" rel="noopener noreferrer" className="hover:underline break-all">
             {part}
           </a>
         );
