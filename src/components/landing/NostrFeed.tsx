@@ -114,7 +114,7 @@ export const NostrFeed = () => {
       ) : notes.length === 0 ? (
         <p className="text-center text-muted-foreground py-12">No updates found.</p>
       ) : (
-        <ScrollArea className="h-[330px]">
+        <ScrollArea className="h-[350px]">
           <div className="space-y-4 pr-4">
             {notes.map((note) => (
               <article
