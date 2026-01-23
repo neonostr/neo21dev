@@ -133,6 +133,10 @@ export const NostrFeed = () => {
           ))}
         </div>
       )}
+
+      <p className="text-xs text-muted-foreground mt-6">
+        Updates pulled from Nostr: {[...HASHTAGS].sort().map(tag => `#${tag}`).join(' ')}
+      </p>
     </section>
   );
 };
