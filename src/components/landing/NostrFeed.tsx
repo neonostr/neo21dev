@@ -84,14 +84,27 @@ export const NostrFeed = () => {
     });
   };
 
-  // Strip hashtags from content for cleaner display
-  const cleanContent = (content: string) => {
-    let cleaned = content;
-    HASHTAGS.forEach((tag) => {
-      const regex = new RegExp(`#${tag}\\b`, "gi");
-      cleaned = cleaned.replace(regex, "");
+  // Parse content and make URLs clickable
+  const renderContent = (content: string) => {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    const parts = content.split(urlRegex);
+    
+    return parts.map((part, index) => {
+      if (urlRegex.test(part)) {
+        return (
+          <a
+            key={index}
+            href={part}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline break-all"
+          >
+            {part}
+          </a>
+        );
+      }
+      return part;
     });
-    return cleaned.trim();
   };
   return (
     <section className="py-16">
@@ -109,7 +122,7 @@ export const NostrFeed = () => {
         <div className="space-y-4">
           {notes.map((note) => (
             <article key={note.id} className="p-4 rounded-md border bg-card hover:border-primary/30 transition-colors">
-              <p className="text-foreground leading-relaxed mb-2">{note.content}</p>
+              <p className="text-foreground leading-relaxed mb-2">{renderContent(note.content)}</p>
               <time className="text-xs text-muted-foreground">{formatDate(note.created_at)}</time>
             </article>
           ))}
