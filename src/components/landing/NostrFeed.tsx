@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { RefreshCw } from "lucide-react";
+import { Zap, ExternalLink, RefreshCw } from "lucide-react";
 import { SimplePool } from "nostr-tools/pool";
 import { nip19 } from "nostr-tools";
 import type { Filter } from "nostr-tools/filter";
@@ -16,7 +16,6 @@ interface NostrNote {
   id: string;
   content: string;
   created_at: number;
-  hashtags: string[];
 }
 export const NostrFeed = () => {
   const [notes, setNotes] = useState<NostrNote[]>([]);
@@ -48,18 +47,10 @@ export const NostrFeed = () => {
         // Skip replies (events that have an "e" tag are replies)
         const isReply = event.tags.some((tag) => tag[0] === "e");
         if (isReply) return;
-
-        // Extract matching hashtags from event tags
-        const eventHashtags = event.tags
-          .filter((tag) => tag[0] === "t")
-          .map((tag) => tag[1])
-          .filter((tag) => HASHTAGS.some((h) => h.toLowerCase() === tag.toLowerCase()));
-
         const note: NostrNote = {
           id: event.id,
           content: event.content,
           created_at: event.created_at,
-          hashtags: eventHashtags,
         };
         notesMap.set(event.id, note);
 
@@ -118,13 +109,6 @@ export const NostrFeed = () => {
         <div className="space-y-4">
           {notes.map((note) => (
             <article key={note.id} className="p-4 rounded-md border bg-card hover:border-primary/30 transition-colors">
-              <div className="flex items-center gap-2 mb-2">
-                {note.hashtags.map((tag) => (
-                  <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary font-medium">
-                    #{tag}
-                  </span>
-                ))}
-              </div>
               <p className="text-foreground leading-relaxed mb-2">{cleanContent(note.content)}</p>
               <time className="text-xs text-muted-foreground">{formatDate(note.created_at)}</time>
             </article>
