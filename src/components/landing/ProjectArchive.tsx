@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { allProjects, ProjectCategory, categoryLabels } from '@/data/projects';
 import { ProjectCard } from './ProjectCard';
-import { Grid3X3 } from 'lucide-react';
 
 const categories: (ProjectCategory | 'all')[] = ['all', 'bitcoin', 'education', 'nostr', 'other'];
 
@@ -14,20 +13,17 @@ export const ProjectArchive = () => {
 
   return (
     <section className="py-16">
-      <div className="flex items-center gap-2 mb-6">
-        <Grid3X3 className="w-5 h-5 text-muted-foreground" />
-        <h2 className="text-2xl font-bold">All Projects</h2>
-      </div>
+      <h2 className="text-xl font-semibold mb-6 text-muted-foreground">All Projects</h2>
       
       <div className="flex flex-wrap gap-2 mb-8">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setFilter(cat)}
-            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+            className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
               filter === cat
                 ? 'bg-primary text-primary-foreground'
-                : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                : 'bg-muted text-muted-foreground hover:text-foreground'
             }`}
           >
             {cat === 'all' ? 'All' : categoryLabels[cat]}

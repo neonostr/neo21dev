@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Palette } from 'lucide-react';
+import { FontSwitcher } from './FontSwitcher';
 
 const themes = ['purple', 'orange', 'green', 'blue', 'teal'] as const;
 type Theme = (typeof themes)[number];
@@ -41,13 +42,16 @@ export const ThemeSwitcher = () => {
 
   return (
     <>
-      <button
-        onClick={cycleTheme}
-        className="fixed bottom-4 right-4 p-2 rounded-full bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground transition-colors opacity-30 hover:opacity-100 z-50"
-        title="Click to change accent color"
-      >
-        <Palette className="w-4 h-4" />
-      </button>
+      <div className="fixed bottom-4 right-4 flex gap-2 z-50">
+        <FontSwitcher />
+        <button
+          onClick={cycleTheme}
+          className="p-2 rounded-full bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground transition-colors opacity-30 hover:opacity-100"
+          title="Click to change accent color"
+        >
+          <Palette className="w-4 h-4" />
+        </button>
+      </div>
       
       {showToast && (
         <div className="fixed bottom-16 right-4 px-3 py-2 rounded-lg bg-card border shadow-lg text-sm z-50 animate-in fade-in slide-in-from-bottom-2">
