@@ -119,7 +119,8 @@ export const NostrFeed = () => {
       <p className="text-xs text-muted-foreground mt-6">
         Updates pulled from Nostr:{" "}
         {[...HASHTAGS]
-          .sort()
+          .filter((tag) => tag === tag.toLowerCase())
+          .sort((a, b) => a.localeCompare(b))
           .map((tag) => `#${tag}`)
           .join(" ")}
       </p>
