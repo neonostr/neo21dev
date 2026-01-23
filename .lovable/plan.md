@@ -1,53 +1,46 @@
 
 
-# NIP-05 Identifier Setup for neo@neo21.dev
+# Improved Meta Title & Description
 
-## Overview
+## Current State
 
-Create the required `nostr.json` file that will allow Nostr clients to verify the identifier `neo@neo21.dev` by looking up `https://neo21.dev/.well-known/nostr.json?name=neo`.
+| Element | Current Content |
+|---------|-----------------|
+| Title | `neo21.dev — Building for the Open Internet` |
+| Description | `I build tools that respect your privacy. Bitcoin, Nostr & more. No tracking. No data collection. Privacy by default.` |
 
-## Implementation
+The current version is informative but lacks personality and punch. It reads like a checklist rather than a compelling hook.
 
-### Create `public/.well-known/nostr.json`
+---
 
-```json
-{
-  "names": {
-    "neo": "f901616f00a63f4f9c7881d4871a03df3d4cee7291eafd7adcbeea7c95c58e27"
-  },
-  "relays": {
-    "f901616f00a63f4f9c7881d4871a03df3d4cee7291eafd7adcbeea7c95c58e27": [
-      "wss://relay.damus.io",
-      "wss://relay.primal.net",
-      "wss://nostr.land"
-    ]
-  }
-}
+## Proposed Options
+
+### Option A: Bold & Rebellious (Recommended)
+
+```text
+Title: neo21.dev — Tools for Sovereign Individuals
+Description: Apps that don't track you, platforms that don't own you. Bitcoin. Nostr. Privacy by default.
 ```
 
-## How It Works
+**Why it works:** "Sovereign individuals" speaks directly to the target audience. The description has rhythm and attitude.
 
-| Component | Value |
-|-----------|-------|
-| Username | `neo` |
-| Domain | `neo21.dev` |
-| Full identifier | `neo@neo21.dev` |
-| Lookup URL | `https://neo21.dev/.well-known/nostr.json?name=neo` |
+---
 
-When a Nostr client wants to verify `neo@neo21.dev`:
-1. It fetches `https://neo21.dev/.well-known/nostr.json`
-2. Looks up `names.neo` to get your hex pubkey
-3. Optionally reads `relays` to discover your preferred relays
+## Technical Changes
 
-## Important Notes
+Once you pick an option, I'll update these locations:
 
-- The file will work once you connect your custom domain `neo21.dev` to this Lovable project
-- Vite serves files from `public/` at the root, so `public/.well-known/nostr.json` becomes `/.well-known/nostr.json`
-- CORS headers are handled automatically by the hosting
+| File | Tags Updated |
+|------|--------------|
+| `index.html` | `<title>`, `<meta name="description">`, `og:title`, `og:description`, `twitter:title`, `twitter:description` |
 
-## File Changes
+All 6 meta tags will be synchronized with your chosen copy.
 
-| File | Action |
-|------|--------|
-| `public/.well-known/nostr.json` | Create new file |
+---
+
+## Next Step
+
+Let me know which option resonates (A, B, or C) — or share your own direction and I'll refine it.
+
+## I chose option A
 
