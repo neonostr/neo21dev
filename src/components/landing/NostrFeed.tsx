@@ -114,10 +114,13 @@ export const NostrFeed = () => {
       ) : notes.length === 0 ? (
         <p className="text-center text-muted-foreground py-12">No updates found.</p>
       ) : (
-        <ScrollArea className="h-[320px]">
+        <ScrollArea className="h-[330px]">
           <div className="space-y-4 pr-4">
             {notes.map((note) => (
-              <article key={note.id} className="p-4 rounded-md border bg-card hover:border-primary/30 transition-colors">
+              <article
+                key={note.id}
+                className="p-4 rounded-md border bg-card hover:border-primary/30 transition-colors"
+              >
                 <p className="text-foreground leading-relaxed mb-2">{renderContent(note.content)}</p>
                 <time className="text-xs text-muted-foreground">{formatDate(note.created_at)}</time>
               </article>
