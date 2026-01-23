@@ -97,7 +97,7 @@ export const NostrFeed = () => {
             href={part}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:underline break-all"
+            className="hover:underline break-all"
           >
             {part}
           </a>
