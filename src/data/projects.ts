@@ -1,4 +1,4 @@
-export type ProjectCategory = "bitcoin" | "nostr" | "education" | "other";
+export type ProjectCategory = "bitcoin" | "nostr" | "other";
 
 export interface Project {
   id: string;
@@ -13,14 +13,12 @@ export interface Project {
 export const categoryLabels: Record<ProjectCategory, string> = {
   bitcoin: "Bitcoin",
   nostr: "Nostr",
-  education: "Educational",
   other: "Other",
 };
 
 export const categoryColors: Record<ProjectCategory, string> = {
   bitcoin: "bg-orange-500/10 text-orange-600",
   nostr: "bg-purple-500/10 text-purple-600",
-  education: "bg-emerald-500/10 text-emerald-600",
   other: "bg-muted text-muted-foreground",
 };
 
@@ -39,7 +37,7 @@ export const projects: Project[] = [
     id: "2",
     name: "WhyBitcoin101",
     description: "Share the why behind Bitcoin with friends and loved ones.",
-    category: "education",
+    category: "bitcoin",
     url: "https://whybitcoin101.com",
     featured: true,
     order: 3,
@@ -57,7 +55,7 @@ export const projects: Project[] = [
     id: "4",
     name: "The Ultimate Orange Pill",
     description: "Helping the world understand why Bitcoin matters, together. Coordinated on Nostr.",
-    category: "education",
+    category: "bitcoin",
     url: "https://whybitcoin101.com/mission",
     order: 4,
   },
@@ -81,7 +79,7 @@ export const projects: Project[] = [
     id: "7",
     name: "WTF Happened In 2030",
     description: "A fictional scenario designed to illustrate the importance of Bitcoin self custody.",
-    category: "education",
+    category: "bitcoin",
     url: "https://wtfhappenedin2030.com",
     order: 7,
   },
