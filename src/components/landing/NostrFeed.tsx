@@ -9,7 +9,7 @@ const RELAYS = ["wss://nostr.land", "wss://relay.primal.net", "wss://relay.damus
 const AUTHOR_NPUB = "npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g";
 
 // Add new hashtags here (without the # symbol)
-const HASHTAGS = ["convy", "daylight", "neo21dev", "nostr2rss", "whybitcoin101"];
+const HASHTAGS = ["convy", "daylight", "neo21dev", "nostr2rss", "Nostr2RSS", "whybitcoin101"];
 // ==============================================================
 
 interface NostrNote {
@@ -31,24 +31,26 @@ export const NostrFeed = () => {
     const notesMap = new Map<string, NostrNote>();
 
     // Create subscription requests for each relay + hashtag combo (OR logic)
-    const requests = RELAYS.flatMap(url => HASHTAGS.map(hashtag => ({
-      url,
-      filter: {
-        kinds: [1],
-        authors: [authorPubkey],
-        "#t": [hashtag],
-        limit: 50
-      } as Filter
-    })));
+    const requests = RELAYS.flatMap((url) =>
+      HASHTAGS.map((hashtag) => ({
+        url,
+        filter: {
+          kinds: [1],
+          authors: [authorPubkey],
+          "#t": [hashtag],
+          limit: 50,
+        } as Filter,
+      })),
+    );
     const sub = pool.subscribeMap(requests, {
       onevent(event) {
         // Skip replies (events that have an "e" tag are replies)
-        const isReply = event.tags.some(tag => tag[0] === "e");
+        const isReply = event.tags.some((tag) => tag[0] === "e");
         if (isReply) return;
         const note: NostrNote = {
           id: event.id,
           content: event.content,
-          created_at: event.created_at
+          created_at: event.created_at,
         };
         notesMap.set(event.id, note);
 
@@ -59,7 +61,7 @@ export const NostrFeed = () => {
       },
       oneose() {
         setLoading(false);
-      }
+      },
     });
 
     // Cleanup on unmount
@@ -78,39 +80,49 @@ export const NostrFeed = () => {
     if (days < 7) return `${days} days ago`;
     return date.toLocaleDateString("en-US", {
       month: "short",
-      day: "numeric"
+      day: "numeric",
     });
   };
 
   // Strip hashtags from content for cleaner display
   const cleanContent = (content: string) => {
     let cleaned = content;
-    HASHTAGS.forEach(tag => {
+    HASHTAGS.forEach((tag) => {
       const regex = new RegExp(`#${tag}\\b`, "gi");
       cleaned = cleaned.replace(regex, "");
     });
     return cleaned.trim();
   };
-  return <section className="py-16">
+  return (
+    <section className="py-16">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-xl font-semibold text-muted-foreground">Updates</h2>
-
-        
       </div>
 
-      {loading ? <div className="flex items-center justify-center py-12">
+      {loading ? (
+        <div className="flex items-center justify-center py-12">
           <RefreshCw className="w-5 h-5 animate-spin text-muted-foreground" />
-        </div> : notes.length === 0 ? <p className="text-center text-muted-foreground py-12">
-          No updates found.
-        </p> : <div className="space-y-4">
-          {notes.map(note => <article key={note.id} className="p-4 rounded-md border bg-card hover:border-primary/30 transition-colors">
+        </div>
+      ) : notes.length === 0 ? (
+        <p className="text-center text-muted-foreground py-12">No updates found.</p>
+      ) : (
+        <div className="space-y-4">
+          {notes.map((note) => (
+            <article key={note.id} className="p-4 rounded-md border bg-card hover:border-primary/30 transition-colors">
               <p className="text-foreground leading-relaxed mb-2">{cleanContent(note.content)}</p>
               <time className="text-xs text-muted-foreground">{formatDate(note.created_at)}</time>
-            </article>)}
-        </div>}
+            </article>
+          ))}
+        </div>
+      )}
 
       <p className="text-xs text-muted-foreground mt-6">
-        Updates pulled from Nostr: {[...HASHTAGS].sort().map(tag => `#${tag}`).join(' ')}
+        Updates pulled from Nostr:{" "}
+        {[...HASHTAGS]
+          .sort()
+          .map((tag) => `#${tag}`)
+          .join(" ")}
       </p>
-    </section>;
+    </section>
+  );
 };
