@@ -103,19 +103,15 @@ export const NostrFeed = () => {
   return (
     <section className="py-16">
       <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center gap-2">
-          <Zap className="w-5 h-5 text-primary" />
-          <h2 className="text-2xl font-bold">Updates</h2>
-        </div>
+        <h2 className="text-xl font-semibold text-muted-foreground">Updates</h2>
 
         <a
           href={`https://njump.me/${AUTHOR_NPUB}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-1"
+          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
-          View on Nostr
-          <ExternalLink className="w-3 h-3" />
+          View on Nostr →
         </a>
       </div>
 
@@ -125,27 +121,18 @@ export const NostrFeed = () => {
         </div>
       ) : notes.length === 0 ? (
         <p className="text-center text-muted-foreground py-12">
-          No updates found with {HASHTAGS.map((h) => `#${h}`).join(" or ")}
+          No updates found.
         </p>
       ) : (
         <div className="space-y-4">
           {notes.map((note) => (
-            <article key={note.id} className="p-4 rounded-lg border bg-card/50 hover:bg-card transition-colors">
+            <article key={note.id} className="p-4 rounded-md border bg-card hover:border-primary/30 transition-colors">
               <p className="text-foreground leading-relaxed mb-2">{cleanContent(note.content)}</p>
               <time className="text-xs text-muted-foreground">{formatDate(note.created_at)}</time>
             </article>
           ))}
         </div>
       )}
-
-      <p className="text-xs text-muted-foreground mt-6 text-center">
-        Updates pulled from Nostr using{" "}
-        {HASHTAGS.map((h) => (
-          <code key={h} className="text-primary mx-1">
-            #{h}
-          </code>
-        ))}
-      </p>
     </section>
   );
 };
