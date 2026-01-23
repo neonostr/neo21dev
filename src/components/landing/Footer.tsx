@@ -9,13 +9,11 @@ export const Footer = () => {
             rel="noopener noreferrer"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            Nostr
+            Find Me ON Nostr
           </a>
         </div>
-        
-        <p className="text-sm text-muted-foreground">
-          No tracking. No data collection.
-        </p>
+
+        <p className="text-sm text-muted-foreground">They build walls. We build doors.</p>
       </div>
     </footer>
   );
