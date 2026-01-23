@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { Zap, ExternalLink, RefreshCw } from "lucide-react";
+import { RefreshCw } from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { SimplePool } from "nostr-tools/pool";
 import { nip19 } from "nostr-tools";
 import type { Filter } from "nostr-tools/filter";
@@ -113,14 +114,16 @@ export const NostrFeed = () => {
       ) : notes.length === 0 ? (
         <p className="text-center text-muted-foreground py-12">No updates found.</p>
       ) : (
-        <div className="space-y-4">
-          {notes.map((note) => (
-            <article key={note.id} className="p-4 rounded-md border bg-card hover:border-primary/30 transition-colors">
-              <p className="text-foreground leading-relaxed mb-2">{renderContent(note.content)}</p>
-              <time className="text-xs text-muted-foreground">{formatDate(note.created_at)}</time>
-            </article>
-          ))}
-        </div>
+        <ScrollArea className="h-[320px]">
+          <div className="space-y-4 pr-4">
+            {notes.map((note) => (
+              <article key={note.id} className="p-4 rounded-md border bg-card hover:border-primary/30 transition-colors">
+                <p className="text-foreground leading-relaxed mb-2">{renderContent(note.content)}</p>
+                <time className="text-xs text-muted-foreground">{formatDate(note.created_at)}</time>
+              </article>
+            ))}
+          </div>
+        </ScrollArea>
       )}
 
       <p className="text-xs text-muted-foreground mt-6">
