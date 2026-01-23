@@ -13,7 +13,7 @@ export const Footer = () => {
           </a>
         </div>
 
-        <p className="text-sm text-muted-foreground">They build walls. We build doors.</p>
+        <p className="text-sm text-muted-foreground">It's time to build the world we want to live in.</p>
       </div>
     </footer>
   );
