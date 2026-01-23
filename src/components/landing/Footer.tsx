@@ -9,7 +9,7 @@ export const Footer = () => {
             rel="noopener noreferrer"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            Find Me ON Nostr
+            Nostr
           </a>
         </div>
 

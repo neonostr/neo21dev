@@ -8,14 +8,12 @@ export const Hero = () => {
 
         <div className="space-y-4 mb-12">
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Because I'm tired of apps that track you, platforms that own your data, 
-            and a web that treats people as products.
+            Because I'm tired of apps that track you, platforms that own your data, and a web that treats people as
+            products.
           </p>
           <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
             This is my corner of the internet where I ship tools that put you in control.
-            <span className="block mt-2 text-muted-foreground">
-              Bitcoin. Nostr. Privacy by default.
-            </span>
+            <span className="block mt-2 text-muted-foreground">Bitcoin. Nostr & More. Privacy by default.</span>
           </p>
         </div>
 
