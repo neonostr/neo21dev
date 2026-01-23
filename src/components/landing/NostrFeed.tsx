@@ -109,7 +109,7 @@ export const NostrFeed = () => {
         <div className="space-y-4">
           {notes.map((note) => (
             <article key={note.id} className="p-4 rounded-md border bg-card hover:border-primary/30 transition-colors">
-              <p className="text-foreground leading-relaxed mb-2">{cleanContent(note.content)}</p>
+              <p className="text-foreground leading-relaxed mb-2">{note.content}</p>
               <time className="text-xs text-muted-foreground">{formatDate(note.created_at)}</time>
             </article>
           ))}
