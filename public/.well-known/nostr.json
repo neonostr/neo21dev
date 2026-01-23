@@ -1,0 +1,12 @@
+{
+  "names": {
+    "neo": "f901616f00a63f4f9c7881d4871a03df3d4cee7291eafd7adcbeea7c95c58e27"
+  },
+  "relays": {
+    "f901616f00a63f4f9c7881d4871a03df3d4cee7291eafd7adcbeea7c95c58e27": [
+      "wss://relay.damus.io",
+      "wss://relay.primal.net",
+      "wss://nostr.land"
+    ]
+  }
+}
