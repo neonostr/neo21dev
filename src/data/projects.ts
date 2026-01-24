@@ -72,7 +72,7 @@ export const projects: Project[] = [
     name: "Youtube Client",
     description: "Stop the time thieves and reclaim control. Watch on your terms.",
     category: "other",
-    url: "https://tube.neo21.dev/",
+    url: "https://tubefeed.neo21.dev/",
     order: 6,
   },
   {
