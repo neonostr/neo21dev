@@ -77,10 +77,10 @@ export const projects: Project[] = [
   },
   {
     id: "7",
-    name: "WTF Happened In 2030",
-    description: "A fictional scenario designed to illustrate the importance of Bitcoin self custody.",
-    category: "bitcoin",
-    url: "https://wtfhappenedin2030.com",
+    name: "Listr",
+    description: "Discover great stuff from people you trust",
+    category: "nostr",
+    url: "https://listr.neo21.dev/",
     order: 7,
   },
 ];
