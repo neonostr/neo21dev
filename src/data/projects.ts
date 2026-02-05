@@ -70,7 +70,7 @@ export const projects: Project[] = [
   {
     id: "6",
     name: "Youtube Client",
-    description: "Your Feed. Your Rules. Stop the time thieves and reclaim control.",
+    description: "Stop the time thieves and reclaim control. Your Feed. Your Rules.",
     category: "other",
     url: "https://tubefeed.neo21.dev/",
     order: 6,
