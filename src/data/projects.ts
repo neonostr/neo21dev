@@ -49,7 +49,7 @@ export const projects: Project[] = [
     category: "nostr",
     url: "https://nostr2rss.com",
     featured: true,
-    order: 2,
+    order: 7,
   },
   {
     id: "4",
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     description: "Like notes that contain article URLs on Nostr and get the full article in your RSS reader.",
     category: "nostr",
     url: "https://like2rss.com",
-    order: 7,
+    order: 2,
   },
 ];
 
