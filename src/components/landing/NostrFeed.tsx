@@ -16,6 +16,8 @@ const HASHTAGS = [
   "daylight",
   "listr",
   "Listr",
+  "like2rss",
+  "Like2RSS",
   "neo21dev",
   "nostr2rss",
   "Nostr2RSS",
