@@ -78,10 +78,18 @@ export const projects: Project[] = [
   {
     id: "7",
     name: "Listr",
-    description: "Discover great stuff from people you trust",
+    description: "Discover great stuff from people you trust.",
     category: "nostr",
     url: "https://listr.neo21.dev/",
     order: 7,
+  },
+  {
+    id: "8",
+    name: "Like2RSS",
+    description: "Like notes that contain article URLs on Nostr and get the full article in your RSS reader.",
+    category: "nostr",
+    url: "https://like2rss.com",
+    order: 8,
   },
 ];
 
