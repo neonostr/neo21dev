@@ -81,7 +81,7 @@ export const projects: Project[] = [
     description: "Discover great stuff from people you trust.",
     category: "nostr",
     url: "https://listr.neo21.dev/",
-    order: 7,
+    order: 8,
   },
   {
     id: "8",
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     description: "Like notes that contain article URLs on Nostr and get the full article in your RSS reader.",
     category: "nostr",
     url: "https://like2rss.com",
-    order: 8,
+    order: 7,
   },
 ];
 
