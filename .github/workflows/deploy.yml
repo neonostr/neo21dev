@@ -24,8 +24,11 @@ jobs:
         with:
           node-version: 20
 
+      - name: Remove lovable-tagger (Lovable-only dev dependency)
+        run: npx json -I -f package.json -e "delete this.devDependencies['lovable-tagger']"
+
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build
         run: npm run build
