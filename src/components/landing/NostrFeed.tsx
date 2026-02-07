@@ -163,7 +163,7 @@ export const NostrFeed = () => {
         </ScrollArea>
       )}
 
-      <p className="text-xs text-muted-foreground mt-6">
+      <p className="text-xs text-muted-foreground mt-6 text-center md:text-left">
         Updates pulled from Nostr.
         <br />
         {"Personal: "}
