@@ -5,17 +5,17 @@ Bitcoin. Nostr. Privacy by default.
 
 ## What is this?
 
-This is my corner of the internet — a personal launchpad for open-source tools built on freedom tech. I believe the web should serve people, not exploit them. Every project here is built with that conviction.
+This is my corner of the internet. A personal launchpad for open-source tools built on freedom tech. I believe the web should serve people, not exploit them. Every project here is built with that conviction.
 
 ## What I build
 
-- **Privacy-first apps** — No tracking, no data harvesting, no ads.
-- **Bitcoin tools** — Because money should be free too.
-- **Nostr utilities** — Communication without gatekeepers.
+- **Privacy-first apps** - No tracking, no data harvesting, no ads.
+- **Bitcoin tools** - Because money should be free too.
+- **Nostr utilities** - Communication without gatekeepers.
 
 ## The mission
 
-I'm tired of apps that track you, platforms that own your data, and a web that treats people as products. So I build the alternative — tools that put you in control.
+I'm tired of apps that track you, platforms that own your data, and a web that treats people as products. So I build the alternative, tools that put you in control.
 
 ## Visit
 
