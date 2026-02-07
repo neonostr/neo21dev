@@ -2,7 +2,7 @@
   "names": {
     "_": "f901616f00a63f4f9c7881d4871a03df3d4cee7291eafd7adcbeea7c95c58e27",
     "neo": "f901616f00a63f4f9c7881d4871a03df3d4cee7291eafd7adcbeea7c95c58e27",
-    "updates": "954226ed1f68f274eca0c0dcb9d6c630098636c68172783f14ad547a2ef323fa"
+    "updates": "743c1c6ff191f276a5ed71d1dce43a1528f30e0af5f04038ca819a4b533aa974"
   },
   "relays": {
     "f901616f00a63f4f9c7881d4871a03df3d4cee7291eafd7adcbeea7c95c58e27": [
@@ -11,7 +11,7 @@
       "wss://nos.lol",
       "wss://nostr.land"
     ],
-    "954226ed1f68f274eca0c0dcb9d6c630098636c68172783f14ad547a2ef323fa": [
+    "743c1c6ff191f276a5ed71d1dce43a1528f30e0af5f04038ca819a4b533aa974": [
       "wss://relay.damus.io",
       "wss://relay.primal.net",
       "wss://nos.lol",
