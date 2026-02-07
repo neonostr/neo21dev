@@ -177,7 +177,7 @@ export const NostrFeed = () => {
         </a>
         {" | Building updates: "}
         <a
-          href="https://njump.to/npub1j4pzdmgldre8fm9qcrwtn4kxxqycvdkxs9e8s0c544285thny0aqm8ckp3"
+          href="https://njump.to/npub1ws7pcml3j8e8df0dw8gaeep6z550xrs27hcyqwx2sxdyk5e6496qk747fm"
           target="_blank"
           rel="noopener noreferrer"
           className="underline hover:text-foreground transition-colors"
