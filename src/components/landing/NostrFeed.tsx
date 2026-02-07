@@ -173,6 +173,13 @@ export const NostrFeed = () => {
           .map((tag) => `#${tag}`)
           .join(" ")}
       </p>
+      <p className="text-xs text-muted-foreground mt-2">
+        Follow me on Nostr{" "}
+        <a href="https://njump.to/npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors">here</a>
+        {" "}or follow{" "}
+        <a href="https://njump.to/npub1j4pzdmgldre8fm9qcrwtn4kxxqycvdkxs9e8s0c544285thny0aqm8ckp3" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors">neo21de</a>
+        {" "}for app launches and feature updates only.
+      </p>
     </section>
   );
 };
