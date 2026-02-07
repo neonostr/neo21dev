@@ -166,7 +166,7 @@ export const NostrFeed = () => {
       <p className="text-xs text-muted-foreground mt-6 text-center md:text-left">
         Updates pulled from Nostr.
         <br className="md:hidden" />
-        {"Personal: "}
+        {" Personal: "}
         <a
           href="https://njump.to/npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g"
           target="_blank"
