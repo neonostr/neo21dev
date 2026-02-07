@@ -2,10 +2,17 @@
   "names": {
     "_": "f901616f00a63f4f9c7881d4871a03df3d4cee7291eafd7adcbeea7c95c58e27",
     "neo": "f901616f00a63f4f9c7881d4871a03df3d4cee7291eafd7adcbeea7c95c58e27",
+    "tony": "b587093b503a82eedc0ddde732e93cb26b93861acc087af3f2c5c66a2b6b89d0",
     "updates": "743c1c6ff191f276a5ed71d1dce43a1528f30e0af5f04038ca819a4b533aa974"
   },
   "relays": {
     "f901616f00a63f4f9c7881d4871a03df3d4cee7291eafd7adcbeea7c95c58e27": [
+      "wss://relay.damus.io",
+      "wss://relay.primal.net",
+      "wss://nos.lol",
+      "wss://nostr.land"
+    ],
+    "b587093b503a82eedc0ddde732e93cb26b93861acc087af3f2c5c66a2b6b89d0": [
       "wss://relay.damus.io",
       "wss://relay.primal.net",
       "wss://nos.lol",
