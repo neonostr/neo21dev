@@ -57,7 +57,7 @@ export const projects: Project[] = [
     description: "Helping the world understand why Bitcoin matters, together. Coordinated on Nostr.",
     category: "bitcoin",
     url: "https://whybitcoin101.com/mission",
-    order: 4,
+    order: 9,
   },
   {
     id: "5",
@@ -98,7 +98,7 @@ export const projects: Project[] = [
       "A private notepad you can access from any device. Log in with your Nostr key and your notes are there.",
     category: "nostr",
     url: "https://nostrpad.org",
-    order: 9,
+    order: 4,
   },
 ];
 
