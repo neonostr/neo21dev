@@ -91,6 +91,15 @@ export const projects: Project[] = [
     url: "https://like2rss.com",
     order: 2,
   },
+  {
+    id: "9",
+    name: "NostrPad",
+    description:
+      "A private notepad you can access from any device. Log in with your Nostr key and your notes are there.",
+    category: "nostr",
+    url: "https://nostrpad.org",
+    order: 9,
+  },
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured).sort((a, b) => a.order - b.order);
