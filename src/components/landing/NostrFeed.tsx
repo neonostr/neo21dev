@@ -171,7 +171,7 @@ export const NostrFeed = () => {
           rel="noopener noreferrer"
           className="underline hover:text-foreground transition-colors"
         >
-          neo@neo21.dev
+          neo
         </a>
         {" | Building updates: "}
         <a
@@ -180,7 +180,7 @@ export const NostrFeed = () => {
           rel="noopener noreferrer"
           className="underline hover:text-foreground transition-colors"
         >
-          updates@neo21.dev
+          neo21dev
         </a>
       </p>
     </section>
