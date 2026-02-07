@@ -8,11 +8,13 @@
     "f901616f00a63f4f9c7881d4871a03df3d4cee7291eafd7adcbeea7c95c58e27": [
       "wss://relay.damus.io",
       "wss://relay.primal.net",
+      "wss://nos.lol",
       "wss://nostr.land"
     ],
     "954226ed1f68f274eca0c0dcb9d6c630098636c68172783f14ad547a2ef323fa": [
       "wss://relay.damus.io",
       "wss://relay.primal.net",
+      "wss://nos.lol",
       "wss://nostr.land"
     ]
   }
