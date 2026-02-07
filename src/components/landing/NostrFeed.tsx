@@ -164,15 +164,7 @@ export const NostrFeed = () => {
       )}
 
       <p className="text-xs text-muted-foreground mt-6">
-        Updates pulled from Nostr:{" "}
-        {[...HASHTAGS]
-          .filter((tag) => tag === tag.toLowerCase())
-          .sort((a, b) => a.localeCompare(b))
-          .map((tag) => `#${tag}`)
-          .join(" ")}
-      </p>
-      <p className="text-xs text-muted-foreground mt-2">
-        Follow me on Nostr{" "}
+        Updates pulled from Nostr. Follow me{" "}
         <a
           href="https://njump.to/npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g"
           target="_blank"
@@ -181,16 +173,16 @@ export const NostrFeed = () => {
         >
           here
         </a>{" "}
-        or follow{" "}
+        for the personal stuff or{" "}
         <a
-          href="https://njump.to/npub1ws7pcml3j8e8df0dw8gaeep6z550xrs27hcyqwx2sxdyk5e6496qk747fm"
+          href="https://njump.to/npub1j4pzdmgldre8fm9qcrwtn4kxxqycvdkxs9e8s0c544285thny0aqm8ckp3"
           target="_blank"
           rel="noopener noreferrer"
           className="underline hover:text-foreground transition-colors"
         >
           neo21de
         </a>{" "}
-        for app launches and feature updates only.
+        for app launches and project updates only.
       </p>
     </section>
   );
