@@ -9,6 +9,11 @@ import type { Filter } from "nostr-tools/filter";
 const RELAYS = ["wss://nostr.land", "wss://relay.primal.net", "wss://relay.damus.io", "wss://nostr.wine"];
 const AUTHOR_NPUB = "npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g";
 
+// Additional npubs to pull ALL kind-1 notes from (no hashtag filter)
+const UNFILTERED_NPUBS = [
+  "npub1ws7pcml3j8e8df0dw8gaeep6z550xrs27hcyqwx2sxdyk5e6496qk747fm",
+];
+
 // Add new hashtags here (without the # symbol)
 const HASHTAGS = [
   "convy",
@@ -43,8 +48,14 @@ export const NostrFeed = () => {
     const authorPubkey = decoded.data as string;
     const notesMap = new Map<string, NostrNote>();
 
-    // Create subscription requests for each relay + hashtag combo (OR logic)
-    const requests = RELAYS.flatMap((url) =>
+    // Decode unfiltered npubs to hex pubkeys
+    const unfilteredPubkeys = UNFILTERED_NPUBS.map((npub) => {
+      const dec = nip19.decode(npub);
+      return dec.data as string;
+    });
+
+    // Create subscription requests for hashtag-filtered author
+    const hashtagRequests = RELAYS.flatMap((url) =>
       HASHTAGS.map((hashtag) => ({
         url,
         filter: {
@@ -55,7 +66,20 @@ export const NostrFeed = () => {
         } as Filter,
       })),
     );
-    const sub = pool.subscribeMap(requests, {
+
+    // Create subscription requests for unfiltered authors (all kind-1)
+    const unfilteredRequests = RELAYS.map((url) => ({
+      url,
+      filter: {
+        kinds: [1],
+        authors: unfilteredPubkeys,
+        limit: 50,
+      } as Filter,
+    }));
+
+    const allRequests = [...hashtagRequests, ...unfilteredRequests];
+
+    const sub = pool.subscribeMap(allRequests, {
       onevent(event) {
         // Skip replies (events that have an "e" tag are replies)
         const isReply = event.tags.some((tag) => tag[0] === "e");
