@@ -10,9 +10,7 @@ const RELAYS = ["wss://nostr.land", "wss://relay.primal.net", "wss://relay.damus
 const AUTHOR_NPUB = "npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g";
 
 // Additional npubs to pull ALL kind-1 notes from (no hashtag filter)
-const UNFILTERED_NPUBS = [
-  "npub1ws7pcml3j8e8df0dw8gaeep6z550xrs27hcyqwx2sxdyk5e6496qk747fm",
-];
+const UNFILTERED_NPUBS = ["npub1ws7pcml3j8e8df0dw8gaeep6z550xrs27hcyqwx2sxdyk5e6496qk747fm"];
 
 // Add new hashtags here (without the # symbol)
 const HASHTAGS = [
@@ -175,10 +173,24 @@ export const NostrFeed = () => {
       </p>
       <p className="text-xs text-muted-foreground mt-2">
         Follow me on Nostr{" "}
-        <a href="https://njump.to/npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors">here</a>
-        {" "}or follow{" "}
-        <a href="https://njump.to/npub1j4pzdmgldre8fm9qcrwtn4kxxqycvdkxs9e8s0c544285thny0aqm8ckp3" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors">neo21de</a>
-        {" "}for app launches and feature updates only.
+        <a
+          href="https://njump.to/npub1lyqkzmcq5cl5l8rcs82gwxsrmu75emnjj84067kuhm48e9w93cns2hhj2g"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-foreground transition-colors"
+        >
+          here
+        </a>{" "}
+        or follow{" "}
+        <a
+          href="https://njump.to/npub1ws7pcml3j8e8df0dw8gaeep6z550xrs27hcyqwx2sxdyk5e6496qk747fm"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-foreground transition-colors"
+        >
+          neo21de
+        </a>{" "}
+        for app launches and feature updates only.
       </p>
     </section>
   );
