@@ -100,6 +100,14 @@ export const projects: Project[] = [
     url: "https://nostrpad.org",
     order: 4,
   },
+  {
+    id: "10",
+    name: "WTF Happened In 2030",
+    description: "A fictional scenario designed to illustrate the importance of Bitcoin self custody.",
+    category: "nostr",
+    url: "https://wtfhappenedin2030.com",
+    order: 10,
+  },
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured).sort((a, b) => a.order - b.order);
