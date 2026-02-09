@@ -65,7 +65,7 @@ export const projects: Project[] = [
     description: "Know when the sun rises and sets. Track daylight hours anywhere in the world.",
     category: "other",
     url: "https://daylight.neo21.dev",
-    order: 11,
+    order: 6,
   },
   {
     id: "6",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     description: "Stop the time thieves and reclaim control. Your Feed. Your Rules.",
     category: "other",
     url: "https://tubefeed.neo21.dev/",
-    order: 6,
+    order: 11,
   },
   {
     id: "7",
