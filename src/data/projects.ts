@@ -110,7 +110,7 @@ export const projects: Project[] = [
   },
   {
     id: "11",
-    name: "kcal",
+    name: "Kcal",
     description: "The world's simplest calorie tracker.",
     category: "other",
     url: "https://simplekcalapp.com",
