@@ -65,7 +65,7 @@ export const projects: Project[] = [
     description: "Know when the sun rises and sets. Track daylight hours anywhere in the world.",
     category: "other",
     url: "https://daylight.neo21.dev",
-    order: 5,
+    order: 11,
   },
   {
     id: "6",
@@ -107,6 +107,14 @@ export const projects: Project[] = [
     category: "bitcoin",
     url: "https://wtfhappenedin2030.com",
     order: 10,
+  },
+  {
+    id: "11",
+    name: "kcal",
+    description: "The world's simplest calorie tracker.",
+    category: "other",
+    url: "https://simplekcalapp.com",
+    order: 5,
   },
 ];
 
