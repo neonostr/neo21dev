@@ -116,6 +116,14 @@ export const projects: Project[] = [
     url: "https://simplekcalapp.com",
     order: 5,
   },
+  {
+    id: "12",
+    name: "Nostrpacks",
+    description: "Discover and share curated lists of Nostr users to follow.",
+    category: "nostr",
+    url: "https://nostrpacks.com/",
+    order: 5,
+  },
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured).sort((a, b) => a.order - b.order);
