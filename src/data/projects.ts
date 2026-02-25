@@ -122,7 +122,7 @@ export const projects: Project[] = [
     description: "Discover and share curated lists of Nostr users to follow.",
     category: "nostr",
     url: "https://nostrpacks.com/",
-    order: 5,
+    order: 12,
   },
 ];
 
