@@ -1,22 +1,32 @@
 
 
-## Dark Mode Toggle Implementation
+## Fix NIP-05 CORS Headers for Nostr Validation
 
-### Approach
-Use `next-themes` (already installed) with `localStorage` persistence. Place a sun/moon icon button in the top-right corner of the page. Default to light mode, but respect saved preference on return visits.
+The NIP-05 validation is failing because the `nostr.json` file is being served without CORS headers. Nostr clients fetch this file from browsers, and without `Access-Control-Allow-Origin: *`, browsers block the cross-origin request.
 
-### Changes
+### The Solution
 
-1. **`src/main.tsx`** — Wrap `<App />` with `<ThemeProvider>` from `next-themes`, configured with `attribute="class"`, `defaultTheme="light"`, `storageKey="theme"`.
+Create a `public/_headers` file that instructs Lovable's hosting to add CORS headers to the `.well-known/nostr.json` response.
 
-2. **`src/components/ThemeToggle.tsx`** (new) — A button component using `useTheme()` from `next-themes`. Shows `Sun` icon in dark mode, `Moon` icon in light mode. Clicking toggles between them. Styled as a ghost icon button positioned unobtrusively.
+### What I'll Create
 
-3. **`src/pages/Index.tsx`** — Add `<ThemeToggle />` in the top-right corner of the page (fixed or absolute positioned within the container).
+**File: `public/_headers`**
+```
+/.well-known/nostr.json
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Content-Type: application/json
+```
 
-4. **`index.html`** — Add `class="light"` to `<html>` tag to prevent flash of unstyled content (next-themes handles the rest).
+This tells the server to:
+- Allow any origin to fetch the file (`Access-Control-Allow-Origin: *`)
+- Allow GET and OPTIONS requests
+- Explicitly set the correct content type
 
-### How it works
-- `next-themes` stores the user's choice in `localStorage` automatically
-- On return visits, it reads `localStorage` and applies the saved theme before React hydrates, preventing flash
-- The dark mode CSS variables already exist in `src/index.css` under `.dark`
+### After Implementation
+
+1. The changes will deploy automatically when you publish
+2. Wait a minute or two for the deployment to complete
+3. Re-run the NIP-05 validation at the same tool - the CORS check should now pass
+4. Nostr clients like Damus, Primal, and Amethyst will be able to verify `neo@neo21.dev`
 
