@@ -48,8 +48,8 @@ export const projects: Project[] = [
     description: "Subscribe to Nostr authors in your RSS reader.",
     category: "nostr",
     url: "https://nostr2rss.com",
-    featured: true,
-    order: 7,
+    featured: false,
+    order: 12,
   },
   {
     id: "4",
@@ -123,6 +123,15 @@ export const projects: Project[] = [
     category: "nostr",
     url: "https://nostrpacks.com/",
     order: 12,
+  },
+  {
+    id: "13",
+    name: "Movie Finder",
+    description: "The best movie recommendations on the internet.",
+    category: "other",
+    url: "https://moviefinder.mov/",
+    featured: true,
+    order: 3,
   },
 ];
 
