@@ -12,7 +12,7 @@ export const ProjectCard = ({ project, featured = false }: ProjectCardProps) => 
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group block rounded-md border bg-card p-5 transition-all hover:border-primary/50 ${
+      className={`group flex flex-col h-full rounded-md border bg-card p-5 transition-all hover:border-primary/50 ${
         featured ? 'md:p-6' : ''
       }`}
     >
