@@ -25,13 +25,13 @@ export const ProjectCard = ({ project, featured = false }: ProjectCardProps) => 
         <ArrowUpRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
       </div>
       
-      <p className={`text-muted-foreground mb-4 leading-relaxed ${
+      <p className={`text-muted-foreground leading-relaxed ${
         featured ? 'text-sm md:text-base' : 'text-sm'
       }`}>
         {project.description}
       </p>
       
-      <span className="text-xs text-muted-foreground">
+      <span className="text-xs text-muted-foreground mt-auto pt-4">
         {categoryLabels[project.category]}
       </span>
     </a>
