@@ -29,7 +29,7 @@ export const projects: Project[] = [
     name: "Cony",
     description: "A privacy focused Bitcoin currency converter.",
     category: "bitcoin",
-    url: "https://converter.neo21.dev",
+    url: "https://convy.neo21.io",
     featured: true,
     order: 1,
   },
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     name: "Nostr2RSS",
     description: "Subscribe to Nostr authors in your RSS reader.",
     category: "nostr",
-    url: "https://nostr2rss.com",
+    url: "https://nostr2rss.neo21.io",
     featured: false,
     order: 12,
   },
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     name: "Daylight",
     description: "Know when the sun rises and sets. Track daylight hours anywhere in the world.",
     category: "other",
-    url: "https://daylight.neo21.dev",
+    url: "https://daylight.neo21.io",
     order: 6,
   },
   {
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     name: "Youtube Client",
     description: "Stop the time thieves and reclaim control. Your Feed. Your Rules.",
     category: "other",
-    url: "https://tubefeed.neo21.dev/",
+    url: "https://tube.neo21.io/",
     order: 11,
   },
   {
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     name: "Listr",
     description: "Discover great stuff from people you trust.",
     category: "nostr",
-    url: "https://listr.neo21.dev/",
+    url: "https://listr.neo21.io",
     order: 8,
   },
   {
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     name: "Like2RSS",
     description: "Like notes that contain article URLs on Nostr and get the full article in your RSS reader.",
     category: "nostr",
-    url: "https://like2rss.com",
+    url: "https://like2rss.neo21.io",
     order: 2,
   },
   {
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     description:
       "A private notepad you can access from any device. Log in with your Nostr key and your notes are there.",
     category: "nostr",
-    url: "https://nostrpad.org",
+    url: "https://nostrpad.neo21.io",
     order: 4,
   },
   {
@@ -113,7 +113,7 @@ export const projects: Project[] = [
     name: "Kcal",
     description: "The world's simplest calorie tracker.",
     category: "other",
-    url: "https://simplekcalapp.com",
+    url: "https://kcal.neo21.io",
     order: 5,
   },
   {
@@ -121,7 +121,7 @@ export const projects: Project[] = [
     name: "Nostrpacks",
     description: "Discover and share curated lists of Nostr users to follow.",
     category: "nostr",
-    url: "https://nostrpacks.com/",
+    url: "https://nostrpacks.neo21.io",
     order: 12,
   },
   {
@@ -129,7 +129,7 @@ export const projects: Project[] = [
     name: "Movie Finder",
     description: "The best movie recommendations on the internet.",
     category: "other",
-    url: "https://moviefinder.mov/",
+    url: "https://moviefinder.neo21.io",
     featured: true,
     order: 3,
   },
