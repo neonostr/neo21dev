@@ -1,0 +1,44 @@
+name: Generate CONTENT.md
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/data/projects.ts"
+      - "src/components/landing/Hero.tsx"
+      - "src/components/landing/Footer.tsx"
+      - "scripts/generate-markdown.mjs"
+      - ".github/workflows/generate-content.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-content
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate CONTENT.md
+        run: node scripts/generate-markdown.mjs
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet CONTENT.md; then
+            echo "No changes to CONTENT.md"
+            exit 0
+          fi
+          git add CONTENT.md
+          git commit -m "chore: regenerate CONTENT.md [skip ci]"
+          git push
