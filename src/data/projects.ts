@@ -6,6 +6,13 @@ export interface Project {
   description: string;
   category: ProjectCategory;
   url: string;
+  /**
+   * Optional override used when visitor is NOT on neo21.io / neo21.dev
+   * and NOT on a lovable preview host. When set, always overrides `url`
+   * for those visitors. Leave empty to fall back to the `.dev` variant
+   * (for neo21 subdomains) or the stored `url` otherwise.
+   */
+  alternativeUrl?: string;
   featured?: boolean;
   order: number;
 }
