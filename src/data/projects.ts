@@ -131,6 +131,7 @@ export const projects: Project[] = [
     description: "The best movie recommendations on the internet.",
     category: "other",
     url: "https://moviefinder.neo21.io",
+    alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqesmoviefinder.nsite.run",
     featured: true,
     order: 3,
   },
