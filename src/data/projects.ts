@@ -31,6 +31,7 @@ export const projects: Project[] = [
     description: "A privacy focused Bitcoin currency converter.",
     category: "bitcoin",
     url: "https://convy.neo21.io",
+    alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqesconvy.nsite.run/",
     featured: true,
     order: 1,
   },
