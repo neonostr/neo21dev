@@ -6,7 +6,6 @@ export interface Project {
   description: string;
   category: ProjectCategory;
   url: string;
-  alternativeUrl?: string;
   featured?: boolean;
   order: number;
 }
