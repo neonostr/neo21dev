@@ -40,4 +40,4 @@ This is my corner of the internet where I ship tools that put you in control.
 
 _It's time to build the world we want to live in._
 
-<sub>Auto-generated from source on 2026-05-28.</sub>
+<sub>Auto-generated from source on 2026-05-29.</sub>
