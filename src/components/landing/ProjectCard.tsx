@@ -30,7 +30,7 @@ export const ProjectCard = ({ project, featured = false }: ProjectCardProps) => 
   const href = adaptNeoUrl(project.url);
   return (
     <a
-      href={project.url}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={`group flex flex-col h-full rounded-md border bg-card p-5 transition-all hover:border-primary/50 ${
