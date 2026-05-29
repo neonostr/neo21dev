@@ -7,27 +7,66 @@ interface ProjectCardProps {
 }
 
 const NEO_TLDS = ['neo21.io', 'neo21.dev'] as const;
+type NeoTld = (typeof NEO_TLDS)[number];
 
-const adaptNeoUrl = (url: string): string => {
-  if (typeof window === 'undefined') return url;
-  const host = window.location.hostname;
-  const currentTld = NEO_TLDS.find((t) => host === t || host.endsWith(`.${t}`));
-  if (!currentTld) return url;
+const LOVABLE_HOST_SUFFIXES = ['.lovable.app', '.lovable.dev'] as const;
+
+const isNeoSubdomainUrl = (url: string): NeoTld | null => {
   try {
     const u = new URL(url);
-    const otherTld = NEO_TLDS.find((t) => t !== currentTld)!;
-    if (u.hostname === otherTld || u.hostname.endsWith(`.${otherTld}`)) {
-      u.hostname = u.hostname.slice(0, -otherTld.length) + currentTld;
-      return u.toString();
-    }
+    return NEO_TLDS.find((t) => u.hostname === t || u.hostname.endsWith(`.${t}`)) ?? null;
   } catch {
-    // ignore
+    return null;
   }
-  return url;
+};
+
+const swapNeoTld = (url: string, from: NeoTld, to: NeoTld): string => {
+  try {
+    const u = new URL(url);
+    u.hostname = u.hostname.slice(0, -from.length) + to;
+    return u.toString();
+  } catch {
+    return url;
+  }
+};
+
+const resolveUrl = (project: Project): string => {
+  if (typeof window === 'undefined') return project.url;
+  const host = window.location.hostname;
+
+  // Bucket 1: visitor is on neo21.io or neo21.dev — match current TLD
+  const currentNeoTld = NEO_TLDS.find((t) => host === t || host.endsWith(`.${t}`));
+  if (currentNeoTld) {
+    const projectNeoTld = isNeoSubdomainUrl(project.url);
+    if (projectNeoTld && projectNeoTld !== currentNeoTld) {
+      return swapNeoTld(project.url, projectNeoTld, currentNeoTld);
+    }
+    return project.url;
+  }
+
+  // Bucket 2: lovable preview / published — neo21 subdomains => .io, others as-is
+  const isLovable = LOVABLE_HOST_SUFFIXES.some((s) => host.endsWith(s));
+  if (isLovable) {
+    const projectNeoTld = isNeoSubdomainUrl(project.url);
+    if (projectNeoTld && projectNeoTld !== 'neo21.io') {
+      return swapNeoTld(project.url, projectNeoTld, 'neo21.io');
+    }
+    return project.url;
+  }
+
+  // Bucket 3: anywhere else (nsite, mirrors, custom hosts)
+  if (project.alternativeUrl && project.alternativeUrl.trim()) {
+    return project.alternativeUrl;
+  }
+  const projectNeoTld = isNeoSubdomainUrl(project.url);
+  if (projectNeoTld && projectNeoTld !== 'neo21.dev') {
+    return swapNeoTld(project.url, projectNeoTld, 'neo21.dev');
+  }
+  return project.url;
 };
 
 export const ProjectCard = ({ project, featured = false }: ProjectCardProps) => {
-  const href = adaptNeoUrl(project.url);
+  const href = resolveUrl(project);
   return (
     <a
       href={href}
