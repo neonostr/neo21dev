@@ -6,13 +6,6 @@ export interface Project {
   description: string;
   category: ProjectCategory;
   url: string;
-  /**
-   * Optional override used when visitor is NOT on neo21.io / neo21.dev
-   * and NOT on a lovable preview host. When set, always overrides `url`
-   * for those visitors. Leave empty to fall back to the `.dev` variant
-   * (for neo21 subdomains) or the stored `url` otherwise.
-   */
-  alternativeUrl?: string;
   featured?: boolean;
   order: number;
 }
@@ -121,6 +114,7 @@ export const projects: Project[] = [
     description: "The world's simplest calorie tracker.",
     category: "other",
     url: "https://kcal.neo21.io",
+alternativeUrl:"https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqeskcal.nsite.run"
     order: 5,
   },
   {
