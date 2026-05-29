@@ -114,7 +114,7 @@ export const projects: Project[] = [
     description: "The world's simplest calorie tracker.",
     category: "other",
     url: "https://kcal.neo21.io",
-alternativeUrl:"https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqeskcal.nsite.run"
+    alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqeskcal.nsite.run",
     order: 5,
   },
   {
