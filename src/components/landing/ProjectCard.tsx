@@ -6,7 +6,28 @@ interface ProjectCardProps {
   featured?: boolean;
 }
 
+const NEO_TLDS = ['neo21.io', 'neo21.dev'] as const;
+
+const adaptNeoUrl = (url: string): string => {
+  if (typeof window === 'undefined') return url;
+  const host = window.location.hostname;
+  const currentTld = NEO_TLDS.find((t) => host === t || host.endsWith(`.${t}`));
+  if (!currentTld) return url;
+  try {
+    const u = new URL(url);
+    const otherTld = NEO_TLDS.find((t) => t !== currentTld)!;
+    if (u.hostname === otherTld || u.hostname.endsWith(`.${otherTld}`)) {
+      u.hostname = u.hostname.slice(0, -otherTld.length) + currentTld;
+      return u.toString();
+    }
+  } catch {
+    // ignore
+  }
+  return url;
+};
+
 export const ProjectCard = ({ project, featured = false }: ProjectCardProps) => {
+  const href = adaptNeoUrl(project.url);
   return (
     <a
       href={project.url}
