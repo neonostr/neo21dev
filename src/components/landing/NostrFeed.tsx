@@ -34,38 +34,17 @@ export const NostrFeed = () => {
     const authorPubkey = decoded.data as string;
     const notesMap = new Map<string, NostrNote>();
 
-    // Decode unfiltered npubs to hex pubkeys
-    const unfilteredPubkeys = UNFILTERED_NPUBS.map((npub) => {
-      const dec = nip19.decode(npub);
-      return dec.data as string;
-    });
-
-    // Create subscription requests for hashtag-filtered author
-    const hashtagRequests = RELAYS.flatMap((url) =>
-      HASHTAGS.map((hashtag) => ({
-        url,
-        filter: {
-          kinds: [1],
-          authors: [authorPubkey],
-          "#t": [hashtag],
-          limit: 50,
-        } as Filter,
-      })),
-    );
-
-    // Create subscription requests for unfiltered authors (all kind-1)
-    const unfilteredRequests = RELAYS.map((url) => ({
+    // Create subscription request for all kind-1 notes from author
+    const requests = RELAYS.map((url) => ({
       url,
       filter: {
         kinds: [1],
-        authors: unfilteredPubkeys,
+        authors: [authorPubkey],
         limit: 50,
       } as Filter,
     }));
 
-    const allRequests = [...hashtagRequests, ...unfilteredRequests];
-
-    const sub = pool.subscribeMap(allRequests, {
+    const sub = pool.subscribeMap(requests, {
       onevent(event) {
         // Skip replies (events that have an "e" tag are replies)
         const isReply = event.tags.some((tag) => tag[0] === "e");
