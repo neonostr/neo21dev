@@ -37,6 +37,12 @@ export const NostrFeed = () => {
   const [notes, setNotes] = useState<NostrNote[]>([]);
   const [loading, setLoading] = useState(true);
   const poolRef = useRef<SimplePool | null>(null);
+
+  // Hide updates entirely on neo21.io
+  const hostname = window.location.hostname;
+  const isNeo21Io = hostname === "neo21.io" || hostname === "www.neo21.io";
+  if (isNeo21Io) return null;
+
   useEffect(() => {
     const pool = new SimplePool();
     poolRef.current = pool;
