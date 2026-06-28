@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { RefreshCw } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SimplePool } from "nostr-tools/pool";
@@ -6,8 +6,16 @@ import { nip19 } from "nostr-tools";
 import type { Filter } from "nostr-tools/filter";
 
 // ============ NOSTR CONFIG - Edit these as needed ============
-const RELAYS = ["wss://nostr.land", "wss://relay.primal.net", "wss://relay.damus.io", "wss://nostr.wine"];
+const RELAYS = [
+  "wss://nostr.land",
+  "wss://relay.primal.net",
+  "wss://relay.damus.io",
+  "wss://nostr.wine",
+  "wss://nos.lol",
+  "wss://relay.nostr.band",
+];
 const AUTHOR_NPUB = "npub1ws7pcml3j8e8df0dw8gaeep6z550xrs27hcyqwx2sxdyk5e6496qk747fm";
+const THREE_MONTHS_SECONDS = 90 * 24 * 60 * 60;
 // ===============================================================
 
 interface NostrNote {
@@ -18,7 +26,6 @@ interface NostrNote {
 export const NostrFeed = () => {
   const [notes, setNotes] = useState<NostrNote[]>([]);
   const [loading, setLoading] = useState(true);
-  const poolRef = useRef<SimplePool | null>(null);
 
   // Hide updates entirely on neo21.io
   const hostname = window.location.hostname;
@@ -26,47 +33,52 @@ export const NostrFeed = () => {
   if (isNeo21Io) return null;
 
   useEffect(() => {
-    const pool = new SimplePool();
-    poolRef.current = pool;
+    let cancelled = false;
+    const pool = new SimplePool({ enableReconnect: true });
 
     // Decode npub to hex pubkey
     const decoded = nip19.decode(AUTHOR_NPUB);
     const authorPubkey = decoded.data as string;
-    const notesMap = new Map<string, NostrNote>();
 
-    // Create subscription request for all kind-1 notes from author
-    const requests = RELAYS.map((url) => ({
-      url,
-      filter: {
-        kinds: [1],
-        authors: [authorPubkey],
-        limit: 50,
-      } as Filter,
-    }));
+    const loadNotes = async () => {
+      const events = await pool.querySync(
+        RELAYS,
+        {
+          kinds: [1],
+          authors: [authorPubkey],
+          limit: 50,
+        } as Filter,
+        { maxWait: 7000 },
+      );
 
-    const sub = pool.subscribeMap(requests, {
-      onevent(event) {
-        const note: NostrNote = {
-          id: event.id,
-          content: event.content,
-          created_at: event.created_at,
-        };
-        notesMap.set(event.id, note);
+      if (cancelled) return;
 
-        // Update state with sorted notes
-        const sortedNotes = Array.from(notesMap.values()).sort((a, b) => b.created_at - a.created_at);
-        setNotes(sortedNotes);
-        setLoading(false);
-      },
-      oneose() {
-        setLoading(false);
-      },
+      const sortedNotes = Array.from(
+        new Map(
+          events.map((event) => [
+            event.id,
+            {
+              id: event.id,
+              content: event.content,
+              created_at: event.created_at,
+            },
+          ]),
+        ).values(),
+      ).sort((a, b) => b.created_at - a.created_at);
+
+      setNotes(sortedNotes);
+      setLoading(false);
+    };
+
+    loadNotes().catch(() => {
+      if (!cancelled) setLoading(false);
     });
 
     // Cleanup on unmount
     return () => {
-      sub.close();
+      cancelled = true;
       pool.close(RELAYS);
+      pool.destroy();
     };
   }, []);
   const formatDate = (timestamp: number) => {
@@ -83,7 +95,6 @@ export const NostrFeed = () => {
     });
   };
 
-  const THREE_MONTHS_SECONDS = 90 * 24 * 60 * 60;
   const latestNote = notes[0];
   const isRecentEnough = latestNote
     ? Date.now() / 1000 - latestNote.created_at < THREE_MONTHS_SECONDS
