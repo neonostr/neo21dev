@@ -46,9 +46,6 @@ export const NostrFeed = () => {
 
     const sub = pool.subscribeMap(requests, {
       onevent(event) {
-        // Skip replies (events that have an "e" tag are replies)
-        const isReply = event.tags.some((tag) => tag[0] === "e");
-        if (isReply) return;
         const note: NostrNote = {
           id: event.id,
           content: event.content,
