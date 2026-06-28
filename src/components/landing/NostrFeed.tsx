@@ -37,6 +37,12 @@ export const NostrFeed = () => {
   const [notes, setNotes] = useState<NostrNote[]>([]);
   const [loading, setLoading] = useState(true);
   const poolRef = useRef<SimplePool | null>(null);
+
+  // Hide updates entirely on neo21.io
+  const hostname = window.location.hostname;
+  const isNeo21Io = hostname === "neo21.io" || hostname === "www.neo21.io";
+  if (isNeo21Io) return null;
+
   useEffect(() => {
     const pool = new SimplePool();
     poolRef.current = pool;
@@ -118,6 +124,15 @@ export const NostrFeed = () => {
       day: "numeric",
     });
   };
+
+  const THREE_MONTHS_SECONDS = 90 * 24 * 60 * 60;
+  const latestNote = notes[0];
+  const isRecentEnough = latestNote
+    ? Date.now() / 1000 - latestNote.created_at < THREE_MONTHS_SECONDS
+    : false;
+
+  // Only show updates on non-neo21.io domains if the latest update is within 3 months
+  if (!loading && !isRecentEnough) return null;
 
   // Parse content and make URLs clickable
   const renderContent = (content: string) => {
