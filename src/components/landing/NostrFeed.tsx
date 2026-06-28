@@ -125,6 +125,15 @@ export const NostrFeed = () => {
     });
   };
 
+  const THREE_MONTHS_SECONDS = 90 * 24 * 60 * 60;
+  const latestNote = notes[0];
+  const isRecentEnough = latestNote
+    ? Date.now() / 1000 - latestNote.created_at < THREE_MONTHS_SECONDS
+    : false;
+
+  // Only show updates on non-neo21.io domains if the latest update is within 3 months
+  if (!loading && !isRecentEnough) return null;
+
   // Parse content and make URLs clickable
   const renderContent = (content: string) => {
     const urlRegex = /(https?:\/\/[^\s]+)/g;
