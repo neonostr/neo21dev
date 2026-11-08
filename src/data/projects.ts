@@ -13,6 +13,7 @@ export interface Project {
 
 export const categoryLabels: Record<ProjectCategory, string> = {
   bitcoin: "Bitcoin",
+  entertainment: "Entertainment",
   nostr: "Nostr",
   other: "Other",
 };
@@ -73,7 +74,7 @@ export const projects: Project[] = [
     id: "6",
     name: "Youtube Client",
     description: "Stop the time thieves and reclaim control. Your Feed. Your Rules.",
-    category: "other",
+    category: "entertainment",
     url: "https://tube.neo21.io/",
     alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqestube.nsite.run",
     order: 11,
@@ -132,7 +133,7 @@ export const projects: Project[] = [
     id: "13",
     name: "Movie Finder",
     description: "The best movie recommendations on the internet.",
-    category: "other",
+    category: "entertainment",
     url: "https://moviefinder.neo21.io",
     alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqesmoviefinder.nsite.run",
     featured: false,
@@ -142,7 +143,7 @@ export const projects: Project[] = [
     id: "14",
     name: "My TV Shows",
     description: "Track what you're watching, waiting for, and finished.",
-    category: "other",
+    category: "entertainment",
     url: "https://tvshows.neo21.io",
     featured: true,
     order: 4,
