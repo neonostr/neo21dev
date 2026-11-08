@@ -21,6 +21,12 @@ This is my corner of the internet where I ship tools that put you in control.
 - **[The Ultimate Orange Pill](https://whybitcoin101.com/mission)** — Helping the world understand why Bitcoin matters, together. Coordinated on Nostr.
 - **[WTF Happened In 2030](https://wtfhappenedin2030.com)** — A fictional scenario designed to illustrate the importance of Bitcoin self custody.
 
+### Entertainment
+
+- **[Movie Finder](https://moviefinder.neo21.io)** — The best movie recommendations on the internet.
+- **[My TV Shows](https://tvshows.neo21.io)** — Track what you're watching, waiting for, and finished.
+- **[Youtube Client](https://tube.neo21.io/)** — Stop the time thieves and reclaim control. Your Feed. Your Rules.
+
 ### Nostr
 
 - **[Like2RSS](https://like2rss.neo21.io)** — Like notes that contain article URLs on Nostr and get the full article in your RSS reader.
