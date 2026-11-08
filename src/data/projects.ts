@@ -101,7 +101,7 @@ export const projects: Project[] = [
       "A private notepad you can access from any device. Log in with your Nostr key and your notes are there.",
     category: "nostr",
     url: "https://nostrpad.neo21.io",
-    order: 4,
+    order: 13,
   },
   {
     id: "10",
@@ -137,6 +137,15 @@ export const projects: Project[] = [
     alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqesmoviefinder.nsite.run",
     featured: true,
     order: 3,
+  },
+  {
+    id: "14",
+    name: "My TV Shows",
+    description: "Track what you're watching, waiting for, and what you've finished.",
+    category: "other",
+    url: "https://tvshows.neo21.io",
+    featured: true,
+    order: 4,
   },
 ];
 
