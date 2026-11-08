@@ -24,7 +24,7 @@ const arrLiteral = "[" + arrMatch[1] + "]";
 // eslint-disable-next-line no-new-func
 const projects = new Function(`return (${arrLiteral});`)();
 
-const categoryLabels = { bitcoin: "Bitcoin", nostr: "Nostr", other: "Other" };
+const categoryLabels = { bitcoin: "Bitcoin", entertainment: "Entertainment", nostr: "Nostr", other: "Other" };
 
 // --- Extract hero copy ---
 const heroSrc = readFileSync(resolve(root, "src/components/landing/Hero.tsx"), "utf8");
