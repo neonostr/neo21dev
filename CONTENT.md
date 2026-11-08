@@ -10,7 +10,6 @@ This is my corner of the internet where I ship tools that put you in control.
 
 - **[Cony](https://convy.neo21.io)** — A privacy focused Bitcoin currency converter.
 - **[WhyBitcoin101](https://whybitcoin101.com)** — Share the why behind Bitcoin with friends and loved ones.
-- **[Movie Finder](https://moviefinder.neo21.io)** — The best movie recommendations on the internet.
 - **[My TV Shows](https://tvshows.neo21.io)** — Track what you're watching, waiting for, and what you've finished.
 
 ## All Projects
