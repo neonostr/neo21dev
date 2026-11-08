@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { allProjects, ProjectCategory, categoryLabels } from '@/data/projects';
 import { ProjectCard } from './ProjectCard';
 
-const categories: (ProjectCategory | 'all')[] = ['all', 'bitcoin', 'nostr', 'other'];
+const categories: (ProjectCategory | 'all')[] = ['all', 'bitcoin', 'entertainment', 'nostr', 'other'];
 
 export const ProjectArchive = () => {
   const [filter, setFilter] = useState<ProjectCategory | 'all'>('all');
