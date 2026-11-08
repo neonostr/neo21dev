@@ -135,7 +135,7 @@ export const projects: Project[] = [
     category: "other",
     url: "https://moviefinder.neo21.io",
     alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqesmoviefinder.nsite.run",
-    featured: true,
+    featured: false,
     order: 3,
   },
   {
