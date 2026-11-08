@@ -31,11 +31,8 @@ This is my corner of the internet where I ship tools that put you in control.
 
 ### Other
 
-- **[Movie Finder](https://moviefinder.neo21.io)** — The best movie recommendations on the internet.
-- **[My TV Shows](https://tvshows.neo21.io)** — Track what you're watching, waiting for, and finished.
 - **[Kcal](https://kcal.neo21.io)** — The world's simplest calorie tracker.
 - **[Daylight](https://daylight.neo21.io)** — Know when the sun rises and sets. Track daylight hours anywhere in the world.
-- **[Youtube Client](https://tube.neo21.io/)** — Stop the time thieves and reclaim control. Your Feed. Your Rules.
 
 ---
 
