@@ -1,4 +1,4 @@
-export type ProjectCategory = "bitcoin" | "nostr" | "other";
+export type ProjectCategory = "bitcoin" | "entertainment" | "nostr" | "other";
 
 export interface Project {
   id: string;
@@ -20,6 +20,7 @@ export const categoryLabels: Record<ProjectCategory, string> = {
 
 export const categoryColors: Record<ProjectCategory, string> = {
   bitcoin: "bg-orange-500/10 text-orange-600",
+  entertainment: "bg-muted text-muted-foreground",
   nostr: "bg-purple-500/10 text-purple-600",
   other: "bg-muted text-muted-foreground",
 };

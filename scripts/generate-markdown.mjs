@@ -40,7 +40,7 @@ const footerLine = stripTags((footerSrc.match(/<p[^>]*>([\s\S]*?)<\/p>/) || [, "
 const sorted = [...projects].sort((a, b) => a.order - b.order);
 const featured = sorted.filter((p) => p.featured);
 
-const grouped = { bitcoin: [], nostr: [], other: [] };
+const grouped = { bitcoin: [], entertainment: [], nostr: [], other: [] };
 for (const p of sorted) grouped[p.category]?.push(p);
 
 const lines = [];
@@ -59,7 +59,7 @@ lines.push("");
 
 lines.push("## All Projects");
 lines.push("");
-for (const cat of ["bitcoin", "nostr", "other"]) {
+for (const cat of ["bitcoin", "entertainment", "nostr", "other"]) {
   if (!grouped[cat].length) continue;
   lines.push(`### ${categoryLabels[cat]}`);
   lines.push("");
