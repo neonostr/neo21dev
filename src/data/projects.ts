@@ -143,7 +143,7 @@ export const projects: Project[] = [
   {
     id: "14",
     name: "My TV Shows",
-    description: "Track what you're watching, waiting for, and finished.",
+    description: "Track what you watch, wait for, and finish.",
     category: "entertainment",
     url: "https://tvshows.neo21.io",
     featured: true,
