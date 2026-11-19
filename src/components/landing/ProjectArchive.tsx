@@ -30,7 +30,7 @@ export const ProjectArchive = () => {
         ))}
       </div>
 
-      <div>
+      <div className="border-t">
         {filteredProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
