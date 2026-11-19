@@ -17,6 +17,16 @@ export const PALETTES: Palette[] = [
   { id: "aqua", name: "Electric Aqua", primary: "189 94% 43%", primaryForeground: "0 0% 4%", soft: "185 96% 90%" },
   { id: "violet", name: "Electric Violet", primary: "262 83% 58%", primaryForeground: "0 0% 100%", soft: "251 91% 95%" },
   { id: "jade", name: "Cyber Jade", primary: "160 84% 39%", primaryForeground: "0 0% 100%", soft: "149 80% 90%" },
+  { id: "coral", name: "Coral Flash", primary: "6 95% 60%", primaryForeground: "0 0% 100%", soft: "10 100% 92%" },
+  { id: "magenta", name: "Hot Magenta", primary: "330 90% 56%", primaryForeground: "0 0% 100%", soft: "335 92% 93%" },
+  { id: "fuchsia", name: "Neon Fuchsia", primary: "300 85% 55%", primaryForeground: "0 0% 100%", soft: "305 90% 94%" },
+  { id: "lemon", name: "Lemon Volt", primary: "52 100% 52%", primaryForeground: "0 0% 4%", soft: "54 100% 89%" },
+  { id: "acid", name: "Acid Green", primary: "72 95% 45%", primaryForeground: "0 0% 4%", soft: "74 95% 89%" },
+  { id: "spring", name: "Spring Neon", primary: "145 85% 45%", primaryForeground: "0 0% 100%", soft: "148 85% 90%" },
+  { id: "turquoise", name: "Turquoise", primary: "172 85% 42%", primaryForeground: "0 0% 100%", soft: "174 82% 90%" },
+  { id: "sky", name: "Electric Sky", primary: "198 100% 50%", primaryForeground: "0 0% 4%", soft: "200 100% 91%" },
+  { id: "azure", name: "Ultramarine", primary: "222 100% 56%", primaryForeground: "0 0% 100%", soft: "224 100% 93%" },
+  { id: "indigo", name: "Hyper Indigo", primary: "248 90% 60%", primaryForeground: "0 0% 100%", soft: "250 92% 94%" },
 ];
 
 export const DEFAULT_PALETTE_ID = "amber";
