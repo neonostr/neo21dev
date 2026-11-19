@@ -43,7 +43,7 @@ export const Footer = () => {
   const allOn = highlights.length === HIGHLIGHTS.length;
 
   return (
-    <footer className="py-12 mt-8 border-t">
+    <footer className="py-12 mt-8">
       <div className="flex flex-col gap-4 items-start max-md:items-center">
         <p className="text-sm text-muted-foreground select-none" onClick={handleSloganClick}>
           It's time to build the world we want to live in.
