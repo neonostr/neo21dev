@@ -16,7 +16,7 @@ export const PALETTES: Palette[] = [
   { id: "jade", name: "Cyber Jade", primary: "160 84% 39%", primaryForeground: "0 0% 100%", soft: "149 80% 90%" },
 ];
 
-export const DEFAULT_PALETTE_ID = "mono";
+export const DEFAULT_PALETTE_ID = "amber";
 
 // Places where the accent can show. Each can be switched on/off in the hidden switcher.
 export const HIGHLIGHTS = [
@@ -31,10 +31,10 @@ export const HIGHLIGHTS = [
   { id: "focus", label: "Focus" },
 ] as const;
 export type HighlightId = (typeof HIGHLIGHTS)[number]["id"];
-export const DEFAULT_HIGHLIGHTS: HighlightId[] = HIGHLIGHTS.map((h) => h.id).filter((id) => id !== "tint" && id !== "rows");
+export const DEFAULT_HIGHLIGHTS: HighlightId[] = ["button", "underline"];
 
 const STORAGE_KEY = "neo21-palette";
-const HL_KEY = "neo21-highlights-v2";
+const HL_KEY = "neo21-highlights-v3";
 
 const read = (k: string) => {
   try {
