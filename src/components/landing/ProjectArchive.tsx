@@ -27,7 +27,7 @@ export const ProjectArchive = () => {
             >
               {cat === 'all' ? 'All' : categoryLabels[cat]}
             </button>
-            {i < categories.length - 1 && <span className="mx-1.5 sm:mx-2 text-border" aria-hidden="true">/</span>}
+            {i < categories.length - 1 && <span className="mx-2 h-3 w-px shrink-0 bg-border sm:mx-2.5" aria-hidden="true" />}
           </span>
         ))}
       </div>
