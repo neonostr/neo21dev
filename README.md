@@ -1,7 +1,7 @@
-# neo21.dev — Tools for Sovereign Individuals
+# neo21 — Tools for Sovereign Individuals
 
 Apps that don't track you. Platforms that don't own you.  
-Bitcoin. Nostr. Privacy by default.
+Tools for Sovereign Individuals.
 
 ## What is this?
 
