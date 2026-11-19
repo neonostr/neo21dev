@@ -74,7 +74,7 @@ export const projects: Project[] = [
     description: "Know when the sun rises and sets. Track daylight hours anywhere in the world.",
     category: "other",
     url: "https://daylight.neo21.io",
-  }
+  },
   {
     id: "4",
     name: "The Ultimate Orange Pill",
