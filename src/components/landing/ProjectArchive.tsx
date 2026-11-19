@@ -15,15 +15,15 @@ export const ProjectArchive = () => {
     <section className="py-12">
       <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-4">All Projects</h2>
       
-      <div className="flex flex-wrap gap-x-6 gap-y-2 mb-6">
+      <div className="flex flex-wrap gap-x-4 gap-y-2 mb-6">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setFilter(cat)}
-            className={`text-sm pb-1 border-b transition-colors ${
+            className={`text-sm underline-offset-2 transition-colors ${
               filter === cat
-                ? 'text-foreground border-foreground'
-                : 'text-muted-foreground border-transparent hover:text-foreground'
+                ? 'text-foreground underline'
+                : 'text-muted-foreground hover:text-foreground'
             }`}
           >
             {cat === 'all' ? 'All' : categoryLabels[cat]}
