@@ -6,8 +6,8 @@ Because I'm tired of apps that track you, platforms that own your data, and a we
 
 ## Featured
 
-- **[Cony](https://convy.neo21.io)** — A privacy focused Bitcoin currency converter.
 - **[Kcal](https://kcal.neo21.io)** — The world's simplest calorie tracker.
+- **[WhyBitcoin101](https://whybitcoin101.com)** — Share the why behind Bitcoin with friends and loved ones.
 - **[My TV Shows](https://tvshows.neo21.io)** — Track what you watch, wait for, and finish.
 
 ## All Projects
