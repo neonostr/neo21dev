@@ -13,24 +13,25 @@ export const ProjectArchive = () => {
 
   return (
     <section className="py-12">
-      <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-4">All Projects</h2>
-      
-      <div className="flex flex-wrap gap-x-4 gap-y-2 mb-6">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setFilter(cat)}
-            className={`text-sm underline-offset-2 transition-colors ${
-              filter === cat
-                ? 'text-foreground underline'
-                : 'text-muted-foreground hover:text-foreground'
-            }`}
-          >
-            {cat === 'all' ? 'All' : categoryLabels[cat]}
-          </button>
+      <div className="flex flex-wrap items-center gap-y-1 mb-4 text-xs font-medium uppercase tracking-widest">
+        {categories.map((cat, i) => (
+          <span key={cat} className="flex items-center">
+            {i > 0 && <span className="mx-2 text-border" aria-hidden="true">/</span>}
+            <button
+              onClick={() => setFilter(cat)}
+              aria-pressed={filter === cat}
+              className={`uppercase transition-colors ${
+                filter === cat
+                  ? 'text-foreground'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              {cat === 'all' ? 'All' : categoryLabels[cat]}
+            </button>
+          </span>
         ))}
       </div>
-      
+
       <div className="border-t">
         {filteredProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
