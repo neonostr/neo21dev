@@ -5,33 +5,33 @@
 /* Modular color palette system - easily swap accent colors */
 @layer base {
   :root {
-    --background: 40 20% 98%;
-    --foreground: 220 15% 8%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 8%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 8%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 18 100% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 75 100% 55%;
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 40 12% 94%;
-    --secondary-foreground: 220 15% 8%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 96%;
 
-    --muted: 40 12% 94%;
-    --muted-foreground: 220 8% 38%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 62%;
 
-    --accent: 18 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 75 100% 55%;
+    --accent-foreground: 0 0% 4%;
 
     --destructive: 0 72% 52%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 10% 86%;
-    --input: 220 10% 86%;
-    --ring: 18 100% 50%;
+    --border: 0 0% 22%;
+    --input: 0 0% 22%;
+    --ring: 75 100% 55%;
 
     --radius: 0.5rem;
 

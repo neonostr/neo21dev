@@ -91,7 +91,7 @@ export const ProjectCard = ({ project, featured = false }: ProjectCardProps) => 
         {project.description}
       </p>
       
-      <span className="text-xs text-muted-foreground mt-auto pt-4">
+      <span className="text-xs text-primary mt-auto pt-4">
         {categoryLabels[project.category]}
       </span>
     </a>
