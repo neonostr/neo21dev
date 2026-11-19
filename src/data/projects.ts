@@ -57,7 +57,7 @@ export const projects: Project[] = [
     description: "Track what you watch, wait for, and finish.",
     category: "entertainment",
     url: "https://tvshows.neo21.io",
-    featuredOrder: 3,
+    featuredOrder: 2,
   },
   {
     id: "15",
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     category: "other",
     url: "https://kcal.neo21.io",
     alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqeskcal.nsite.run",
-    featuredOrder: 2,
+    featuredOrder: 1,
   },
   {
     id: "5",
