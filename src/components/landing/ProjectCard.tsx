@@ -71,10 +71,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex items-center gap-4 border-b py-4 transition-colors hover:bg-muted/40"
+      className="group flex items-center gap-4 border-b py-4 transition-colors hl-row"
     >
       <div className="flex-1 min-w-0 sm:flex sm:items-baseline sm:gap-6">
-        <h3 className="font-medium text-base sm:w-[210px] sm:flex-shrink-0">{project.name}</h3>
+        <h3 className="hl-row-name transition-colors font-medium text-base sm:w-[210px] sm:flex-shrink-0">{project.name}</h3>
         <p className="text-sm text-muted-foreground leading-relaxed">
           {project.description}
         </p>

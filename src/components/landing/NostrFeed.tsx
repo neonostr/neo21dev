@@ -111,7 +111,7 @@ export const NostrFeed = () => {
     return parts.map((part, index) => {
       if (urlRegex.test(part)) {
         return (
-          <a key={index} href={part} target="_blank" rel="noopener noreferrer" className="hover:underline break-all">
+          <a key={index} href={part} target="_blank" rel="noopener noreferrer" className="hl-link hover:underline break-all">
             {part}
           </a>
         );
@@ -122,7 +122,7 @@ export const NostrFeed = () => {
   return (
     <section className="py-16">
       <div className="flex items-center justify-between mb-8">
-        <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Updates</h2>
+        <h2 className="hl-heading text-xs font-medium uppercase tracking-widest text-muted-foreground">Updates</h2>
       </div>
 
       {loading ? (
@@ -137,7 +137,7 @@ export const NostrFeed = () => {
             {notes.map((note) => (
               <article
                 key={note.id}
-                className="p-4 rounded-md border bg-card hover:border-primary/30 transition-colors"
+                className="p-4 rounded-md border bg-card hl-note transition-colors"
               >
                 <p className="text-foreground leading-relaxed mb-2">{renderContent(note.content)}</p>
                 <time className="text-xs text-muted-foreground">{formatDate(note.created_at)}</time>
@@ -153,7 +153,7 @@ export const NostrFeed = () => {
           href="https://njump.to/npub1ws7pcml3j8e8df0dw8gaeep6z550xrs27hcyqwx2sxdyk5e6496qk747fm"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline hover:text-foreground transition-colors"
+          className="hl-link underline hover:text-foreground transition-colors"
         >
           neo21dev
         </a>

@@ -21,7 +21,7 @@ export const ProjectArchive = () => {
               aria-pressed={filter === cat}
               className={`uppercase transition-colors ${
                 filter === cat
-                  ? 'text-foreground'
+                  ? 'text-foreground hl-filter-active'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
             >

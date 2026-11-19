@@ -11,7 +11,7 @@ export const Hero = () => {
         </p>
         <a
           href="#projects"
-          className="inline-flex items-center px-5 py-2.5 rounded-md bg-primary text-primary-foreground text-sm font-medium border border-primary hover:bg-background hover:text-foreground transition-colors"
+          className="inline-flex items-center px-5 py-2.5 hl-button rounded-md text-sm font-medium border transition-colors"
         >
           See what I'm building →
         </a>
