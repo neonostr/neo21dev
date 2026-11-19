@@ -42,7 +42,7 @@ export const projects: Project[] = [
     description: "Share the why behind Bitcoin with friends and loved ones.",
     category: "bitcoin",
     url: "https://whybitcoin101.com",
-    featuredOrder: 2,
+    featuredOrder: 3,
   },
   {
     id: "13",
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     description: "Track what you watch, wait for, and finish.",
     category: "entertainment",
     url: "https://tvshows.neo21.io",
-    featuredOrder: 3,
+    featuredOrder: 2,
   },
   {
     id: "11",
@@ -128,8 +128,7 @@ export const projects: Project[] = [
   {
     id: "9",
     name: "NostrPad",
-    description:
-      "A private notepad synced with your Nostr key.",
+    description: "A private notepad synced with your Nostr key.",
     category: "nostr",
     url: "https://nostrpad.neo21.io",
   },
