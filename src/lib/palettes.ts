@@ -10,6 +10,9 @@ export interface Palette {
 export const PALETTES: Palette[] = [
   { id: "mono", name: "Monochrome", primary: "0 0% 4%", primaryForeground: "0 0% 100%", soft: "0 0% 96%" },
   { id: "amber", name: "Radiant Amber", primary: "38 92% 50%", primaryForeground: "0 0% 4%", soft: "48 96% 89%" },
+  { id: "solar", name: "Solar Orange", primary: "33 100% 55%", primaryForeground: "0 0% 4%", soft: "36 100% 89%" },
+  { id: "blaze", name: "Blaze Orange", primary: "22 100% 51%", primaryForeground: "0 0% 4%", soft: "24 100% 90%" },
+  { id: "ember", name: "Ember Red", primary: "12 100% 54%", primaryForeground: "0 0% 4%", soft: "16 100% 91%" },
   { id: "lime", name: "Electric Lime", primary: "84 81% 44%", primaryForeground: "0 0% 4%", soft: "80 89% 89%" },
   { id: "aqua", name: "Electric Aqua", primary: "189 94% 43%", primaryForeground: "0 0% 4%", soft: "185 96% 90%" },
   { id: "violet", name: "Electric Violet", primary: "262 83% 58%", primaryForeground: "0 0% 100%", soft: "251 91% 95%" },
