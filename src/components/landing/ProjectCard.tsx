@@ -1,5 +1,4 @@
-import { ArrowUpRight } from 'lucide-react';
-import { Project, categoryLabels } from '@/data/projects';
+import { Project } from '@/data/projects';
 
 interface ProjectCardProps {
   project: Project;
@@ -72,18 +71,14 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex items-center gap-4 border-b py-4 px-2 transition-colors hover:bg-primary hover:text-primary-foreground"
+      className="group flex items-center gap-4 border-b py-4 px-2 transition-colors hover:bg-muted/40"
     >
       <div className="flex-1 min-w-0 sm:flex sm:items-baseline sm:gap-6">
         <h3 className="font-medium text-base sm:w-48 sm:flex-shrink-0">{project.name}</h3>
-        <p className="text-sm text-muted-foreground group-hover:text-primary-foreground/70 leading-relaxed">
+        <p className="text-sm text-muted-foreground leading-relaxed">
           {project.description}
         </p>
       </div>
-      <span className="hidden sm:block text-xs text-muted-foreground group-hover:text-primary-foreground/70 flex-shrink-0">
-        {categoryLabels[project.category]}
-      </span>
-      <ArrowUpRight className="w-4 h-4 flex-shrink-0 text-muted-foreground group-hover:text-primary-foreground" />
     </a>
   );
 };
