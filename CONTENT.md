@@ -30,7 +30,7 @@ Because I'm tired of apps that track you, platforms that own your data, and a we
 - **[Listr](https://listr.neo21.io)** — Discover great stuff from people you trust.
 - **[Like2RSS](https://like2rss.neo21.io)** — Turn articles you like on Nostr into RSS feeds.
 - **[Nostr2RSS](https://nostr2rss.neo21.io)** — Subscribe to Nostr authors in your RSS reader.
-- **[Nostrpacks](https://nostrpacks.neo21.io)** — Discover and share curated lists of Nostr users to follow.
+- **[NostrPacks](https://nostrpacks.neo21.io)** — Discover and share curated lists of Nostr users to follow.
 - **[NostrPad](https://nostrpad.neo21.io)** — A private notepad synced with your Nostr key.
 
 ### Other
