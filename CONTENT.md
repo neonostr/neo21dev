@@ -2,9 +2,7 @@
 
 > I build for the open internet.
 
-Because I'm tired of apps that track you, platforms that own your data, and a web that treats people as products.
-
-This is my corner of the internet where I ship tools that put you in control.
+Because I'm tired of apps that track you, platforms that own your data, and a web that treats people as products. This is my corner of the internet where I ship tools that put you in control.
 
 ## Featured
 
