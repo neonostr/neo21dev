@@ -6,8 +6,8 @@ export const Hero = () => {
           I build for the open internet.
         </h1>
         <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-          Because I'm tired of apps that track you, platforms that own your data, and a web that treats people as
-          products. This is my corner of the internet where I ship tools that put you in control.
+          Because I'm tired of apps that track you, platforms that own your data,
+          and a web that treats people as products.This is my corner of the internet where I ship tools that put you in control.
         </p>
         <a
           href="#projects"
