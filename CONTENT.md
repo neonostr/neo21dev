@@ -35,7 +35,7 @@ Because I'm tired of apps that track you, platforms that own your data, and a we
 
 ### Other
 
-- **[SpendX](https://spendx.neo21.io)** — A simple and private spending tracker.
+- **[SpendX](https://spendx.neo21.io)** — Private, frictionless expense tracking.
 - **[Kcal](https://kcal.neo21.io)** — The world's simplest calorie tracker.
 - **[Daylight](https://daylight.neo21.io)** — Track sunrise, sunset, and daylight hours worldwide.
 
