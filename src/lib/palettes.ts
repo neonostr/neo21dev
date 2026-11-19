@@ -29,7 +29,7 @@ export const PALETTES: Palette[] = [
   { id: "indigo", name: "Hyper Indigo", primary: "248 90% 60%", primaryForeground: "0 0% 100%", soft: "250 92% 94%" },
 ];
 
-export const DEFAULT_PALETTE_ID = "amber";
+export const DEFAULT_PALETTE_ID = "solar";
 
 // Places where the accent can show. Each can be switched on/off in the hidden switcher.
 export const HIGHLIGHTS = [
@@ -46,7 +46,7 @@ export const HIGHLIGHTS = [
 export type HighlightId = (typeof HIGHLIGHTS)[number]["id"];
 export const DEFAULT_HIGHLIGHTS: HighlightId[] = ["button", "underline"];
 
-const STORAGE_KEY = "neo21-palette";
+const STORAGE_KEY = "neo21-palette-v2";
 const HL_KEY = "neo21-highlights-v3";
 
 const read = (k: string) => {
