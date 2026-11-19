@@ -74,7 +74,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       className="group flex items-center gap-4 border-b py-4 px-2 transition-colors hover:bg-muted/40"
     >
       <div className="flex-1 min-w-0 sm:flex sm:items-baseline sm:gap-6">
-        <h3 className="font-medium text-base sm:w56 sm:flex-shrink-0">{project.name}</h3>
+        <h3 className="font-medium text-base sm:w60 sm:flex-shrink-0">{project.name}</h3>
         <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
       </div>
     </a>
