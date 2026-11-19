@@ -1,7 +1,7 @@
 export const Hero = () => {
   return (
     <section className="pt-20 pb-16 md:pt-32 md:pb-20">
-      <div className="max-w-2xl space-y-6">
+      <div className="space-y-6">
         <h1 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1]">
           I build for the open internet.
         </h1>
