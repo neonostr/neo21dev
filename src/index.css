@@ -60,6 +60,7 @@ html[data-accent][data-hl-button] .hl-button { background: hsl(var(--primary)); 
 .hl-button:hover, html[data-accent][data-hl-button] .hl-button:hover { background: hsl(var(--background)); color: hsl(var(--foreground)); }
 
 html[data-accent][data-hl-filter] .hl-filter-active { color: hsl(var(--primary)); }
+.hl-filter-active { text-decoration-line: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; text-decoration-skip-ink: none; }
 
 .hl-row-name { text-decoration-color: hsl(var(--foreground)); }
 html[data-accent][data-hl-underline] .hl-row-name { text-decoration-color: hsl(var(--primary)); }
