@@ -25,7 +25,7 @@ export const categoryColors: Record<ProjectCategory, string> = {
   other: "bg-muted text-muted-foreground",
 };
 
-// "All Projects" shows projects in exactly this order — move a block up/down to reorder.
+// Featured apps are placed by featuredOrder (1, 2, 3…). Everything else is listed A–Z automatically.
 export const projects: Project[] = [
   {
     id: "1",
@@ -138,4 +138,10 @@ export const featuredProjects = projects
   .filter((p) => p.featuredOrder !== undefined)
   .sort((a, b) => (a.featuredOrder ?? 0) - (b.featuredOrder ?? 0));
 
-export const allProjects = projects;
+// "All Projects" = featured apps first (in featured order), then the rest sorted A–Z.
+export const allProjects = [
+  ...featuredProjects,
+  ...projects
+    .filter((p) => p.featuredOrder === undefined)
+    .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" })),
+];
