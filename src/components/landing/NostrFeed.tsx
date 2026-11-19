@@ -16,6 +16,8 @@ const RELAYS = [
 ];
 const AUTHOR_NPUB = "npub1ws7pcml3j8e8df0dw8gaeep6z550xrs27hcyqwx2sxdyk5e6496qk747fm";
 const THREE_MONTHS_SECONDS = 90 * 24 * 60 * 60;
+// Set to true to load live notes from Nostr again.
+const FEED_ENABLED = false;
 // ===============================================================
 
 interface NostrNote {
@@ -26,6 +28,9 @@ interface NostrNote {
 export const NostrFeed = () => {
   const [notes, setNotes] = useState<NostrNote[]>([]);
   const [loading, setLoading] = useState(true);
+
+  // Feed switched off: no relay connections, no notes loaded.
+  if (!FEED_ENABLED) return null;
 
   // Hide updates entirely on neo21.io
   const hostname = window.location.hostname;
