@@ -42,7 +42,6 @@ export const projects: Project[] = [
     description: "Share the why behind Bitcoin with friends and loved ones.",
     category: "bitcoin",
     url: "https://whybitcoin101.com",
-    featuredOrder: 3,
   },
   {
     id: "13",
@@ -58,7 +57,7 @@ export const projects: Project[] = [
     description: "Track what you watch, wait for, and finish.",
     category: "entertainment",
     url: "https://tvshows.neo21.io",
-    featuredOrder: 2,
+    featuredOrder: 3,
   },
   {
     id: "15",
@@ -75,6 +74,7 @@ export const projects: Project[] = [
     category: "other",
     url: "https://kcal.neo21.io",
     alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqeskcal.nsite.run",
+    featuredOrder: 2,
   },
   {
     id: "5",
