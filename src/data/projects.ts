@@ -128,7 +128,7 @@ export const projects: Project[] = [
   },
   {
     id: "12",
-    name: "Nostrpacks",
+    name: "NostrPacks",
     description: "Discover and share curated lists of Nostr users to follow.",
     category: "nostr",
     url: "https://nostrpacks.neo21.io",
