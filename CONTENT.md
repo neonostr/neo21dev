@@ -18,27 +18,27 @@ This is my corner of the internet where I ship tools that put you in control.
 
 - **[Cony](https://convy.neo21.io)** — A privacy focused Bitcoin currency converter.
 - **[WhyBitcoin101](https://whybitcoin101.com)** — Share the why behind Bitcoin with friends and loved ones.
-- **[The Ultimate Orange Pill](https://whybitcoin101.com/mission)** — Helping the world understand why Bitcoin matters, together. Coordinated on Nostr.
-- **[WTF Happened In 2030](https://wtfhappenedin2030.com)** — A fictional scenario designed to illustrate the importance of Bitcoin self custody.
+- **[The Ultimate Orange Pill](https://whybitcoin101.com/mission)** — Helping the world understand why Bitcoin matters.
+- **[WTF Happened In 2030](https://wtfhappenedin2030.com)** — A fictional story on why Bitcoin self-custody matters.
 
 ### Entertainment
 
 - **[Movie Finder](https://moviefinder.neo21.io)** — The best movie recommendations on the internet.
 - **[My TV Shows](https://tvshows.neo21.io)** — Track what you watch, wait for, and finish.
-- **[Youtube Client](https://tube.neo21.io/)** — Stop the time thieves and reclaim control. Your Feed. Your Rules.
+- **[Youtube Client](https://tube.neo21.io/)** — Reclaim your YouTube feed with zero distractions.
 
 ### Nostr
 
 - **[Listr](https://listr.neo21.io)** — Discover great stuff from people you trust.
-- **[Like2RSS](https://like2rss.neo21.io)** — Like notes that contain article URLs on Nostr and get the full article in your RSS reader.
+- **[Like2RSS](https://like2rss.neo21.io)** — Turn articles you like on Nostr into RSS feeds.
 - **[Nostr2RSS](https://nostr2rss.neo21.io)** — Subscribe to Nostr authors in your RSS reader.
 - **[Nostrpacks](https://nostrpacks.neo21.io)** — Discover and share curated lists of Nostr users to follow.
-- **[NostrPad](https://nostrpad.neo21.io)** — A private notepad you can access from any device. Log in with your Nostr key and your notes are there.
+- **[NostrPad](https://nostrpad.neo21.io)** — A private notepad synced with your Nostr key.
 
 ### Other
 
 - **[Kcal](https://kcal.neo21.io)** — The world's simplest calorie tracker.
-- **[Daylight](https://daylight.neo21.io)** — Know when the sun rises and sets. Track daylight hours anywhere in the world.
+- **[Daylight](https://daylight.neo21.io)** — Track sunrise, sunset, and daylight hours worldwide.
 
 ---
 
