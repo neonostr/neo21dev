@@ -61,6 +61,15 @@ export const projects: Project[] = [
     featuredOrder: 2,
   },
   {
+    id: "15",
+    name: "SpendX",
+    description: "A simple and private spending tracker.",
+    category: "other",
+    url: "https://spendx.neo21.io",
+    featuredOrder: 2,
+  },
+
+  {
     id: "11",
     name: "Kcal",
     description: "The world's simplest calorie tracker.",
