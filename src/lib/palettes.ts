@@ -22,6 +22,7 @@ export const DEFAULT_PALETTE_ID = "mono";
 export const HIGHLIGHTS = [
   { id: "button", label: "Button" },
   { id: "filter", label: "Filter" },
+  { id: "underline", label: "Underline" },
   { id: "rows", label: "Row names" },
   { id: "tint", label: "Row tint" },
   { id: "headings", label: "Headings" },
@@ -30,10 +31,10 @@ export const HIGHLIGHTS = [
   { id: "focus", label: "Focus" },
 ] as const;
 export type HighlightId = (typeof HIGHLIGHTS)[number]["id"];
-export const DEFAULT_HIGHLIGHTS: HighlightId[] = HIGHLIGHTS.map((h) => h.id);
+export const DEFAULT_HIGHLIGHTS: HighlightId[] = HIGHLIGHTS.map((h) => h.id).filter((id) => id !== "tint" && id !== "rows");
 
 const STORAGE_KEY = "neo21-palette";
-const HL_KEY = "neo21-highlights";
+const HL_KEY = "neo21-highlights-v2";
 
 const read = (k: string) => {
   try {
