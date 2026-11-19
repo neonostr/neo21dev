@@ -29,8 +29,8 @@ This is my corner of the internet where I ship tools that put you in control.
 
 ### Nostr
 
-- **[Like2RSS](https://like2rss.neo21.io)** — Like notes that contain article URLs on Nostr and get the full article in your RSS reader.
 - **[Listr](https://listr.neo21.io)** — Discover great stuff from people you trust.
+- **[Like2RSS](https://like2rss.neo21.io)** — Like notes that contain article URLs on Nostr and get the full article in your RSS reader.
 - **[Nostr2RSS](https://nostr2rss.neo21.io)** — Subscribe to Nostr authors in your RSS reader.
 - **[Nostrpacks](https://nostrpacks.neo21.io)** — Discover and share curated lists of Nostr users to follow.
 - **[NostrPad](https://nostrpad.neo21.io)** — A private notepad you can access from any device. Log in with your Nostr key and your notes are there.
