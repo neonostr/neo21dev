@@ -122,7 +122,7 @@ export const NostrFeed = () => {
   return (
     <section className="py-16">
       <div className="flex items-center justify-between mb-8">
-        <h2 className="text-xl font-semibold text-muted-foreground">Updates</h2>
+        <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Updates</h2>
       </div>
 
       {loading ? (

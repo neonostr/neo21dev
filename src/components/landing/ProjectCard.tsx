@@ -65,35 +65,25 @@ const resolveUrl = (project: Project): string => {
   return project.url;
 };
 
-export const ProjectCard = ({ project, featured = false }: ProjectCardProps) => {
+export const ProjectCard = ({ project }: ProjectCardProps) => {
   const href = resolveUrl(project);
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group flex flex-col h-full rounded-md border bg-card p-5 transition-all hover:border-primary/50 ${
-        featured ? 'md:p-6' : ''
-      }`}
+      className="group flex items-center gap-4 border-b py-4 px-2 transition-colors hover:bg-primary hover:text-primary-foreground"
     >
-      <div className="flex items-start justify-between gap-3 mb-3">
-        <h3 className={`font-semibold group-hover:text-primary transition-colors ${
-          featured ? 'text-lg' : 'text-base'
-        }`}>
-          {project.name}
-        </h3>
-        <ArrowUpRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+      <div className="flex-1 min-w-0 sm:flex sm:items-baseline sm:gap-6">
+        <h3 className="font-medium text-base sm:w-48 sm:flex-shrink-0">{project.name}</h3>
+        <p className="text-sm text-muted-foreground group-hover:text-primary-foreground/70 leading-relaxed">
+          {project.description}
+        </p>
       </div>
-      
-      <p className={`text-muted-foreground leading-relaxed ${
-        featured ? 'text-sm md:text-base' : 'text-sm'
-      }`}>
-        {project.description}
-      </p>
-      
-      <span className="text-xs text-primary mt-auto pt-4">
+      <span className="hidden sm:block text-xs text-muted-foreground group-hover:text-primary-foreground/70 flex-shrink-0">
         {categoryLabels[project.category]}
       </span>
+      <ArrowUpRight className="w-4 h-4 flex-shrink-0 text-muted-foreground group-hover:text-primary-foreground" />
     </a>
   );
 };

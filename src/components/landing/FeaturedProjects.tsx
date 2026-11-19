@@ -3,12 +3,11 @@ import { ProjectCard } from './ProjectCard';
 
 export const FeaturedProjects = () => {
   return (
-    <section id="projects" className="py-16">
-      <h2 className="text-xl font-semibold mb-8 text-muted-foreground">Featured</h2>
-      
-      <div className="grid gap-4 md:grid-cols-3">
+    <section id="projects" className="py-12">
+      <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-4">Featured</h2>
+      <div className="border-t">
         {featuredProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} featured />
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </section>
