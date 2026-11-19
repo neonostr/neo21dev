@@ -37,13 +37,6 @@ export const projects: Project[] = [
     featuredOrder: 1,
   },
   {
-    id: "8",
-    name: "Like2RSS",
-    description: "Like notes that contain article URLs on Nostr and get the full article in your RSS reader.",
-    category: "nostr",
-    url: "https://like2rss.neo21.io",
-  },
-  {
     id: "2",
     name: "WhyBitcoin101",
     description: "Share the why behind Bitcoin with friends and loved ones.",
@@ -81,14 +74,7 @@ export const projects: Project[] = [
     description: "Know when the sun rises and sets. Track daylight hours anywhere in the world.",
     category: "other",
     url: "https://daylight.neo21.io",
-  },
-  {
-    id: "7",
-    name: "Listr",
-    description: "Discover great stuff from people you trust.",
-    category: "nostr",
-    url: "https://listr.neo21.io",
-  },
+  }
   {
     id: "4",
     name: "The Ultimate Orange Pill",
@@ -110,6 +96,20 @@ export const projects: Project[] = [
     category: "entertainment",
     url: "https://tube.neo21.io/",
     alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqestube.nsite.run",
+  },
+  {
+    id: "7",
+    name: "Listr",
+    description: "Discover great stuff from people you trust.",
+    category: "nostr",
+    url: "https://listr.neo21.io",
+  },
+  {
+    id: "8",
+    name: "Like2RSS",
+    description: "Like notes that contain article URLs on Nostr and get the full article in your RSS reader.",
+    category: "nostr",
+    url: "https://like2rss.neo21.io",
   },
   {
     id: "3",
