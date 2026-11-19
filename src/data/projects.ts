@@ -34,7 +34,6 @@ export const projects: Project[] = [
     category: "bitcoin",
     url: "https://convy.neo21.io",
     alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqesconvy.nsite.run/",
-    featuredOrder: 1,
   },
   {
     id: "2",
@@ -42,6 +41,7 @@ export const projects: Project[] = [
     description: "Share the why behind Bitcoin with friends and loved ones.",
     category: "bitcoin",
     url: "https://whybitcoin101.com",
+    featuredOrder: 3,
   },
   {
     id: "13",
