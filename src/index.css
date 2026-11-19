@@ -61,6 +61,10 @@ html[data-accent][data-hl-button] .hl-button { background: hsl(var(--primary)); 
 
 html[data-accent][data-hl-filter] .hl-filter-active { color: hsl(var(--primary)); }
 
+/* Active category: same underline as the app-name hover */
+.hl-filter-active { text-decoration-line: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; text-decoration-skip-ink: none; text-decoration-color: hsl(var(--foreground)); }
+html[data-accent][data-hl-underline] .hl-filter-active { text-decoration-color: hsl(var(--primary)); }
+
 .hl-row-name { text-decoration-color: hsl(var(--foreground)); }
 html[data-accent][data-hl-underline] .hl-row-name { text-decoration-color: hsl(var(--primary)); }
 .hl-row:hover .hl-row-name { text-decoration-line: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; text-decoration-skip-ink: none; }
