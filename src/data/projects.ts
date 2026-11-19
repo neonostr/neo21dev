@@ -138,10 +138,7 @@ export const featuredProjects = projects
   .filter((p) => p.featuredOrder !== undefined)
   .sort((a, b) => (a.featuredOrder ?? 0) - (b.featuredOrder ?? 0));
 
-// "All Projects" = featured apps first (in featured order), then the rest sorted A–Z.
-export const allProjects = [
-  ...featuredProjects,
-  ...projects
-    .filter((p) => p.featuredOrder === undefined)
-    .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" })),
-];
+// "All Projects" = every app sorted A–Z (featured order only applies to the Featured section).
+export const allProjects = [...projects].sort((a, b) =>
+  a.name.localeCompare(b.name, undefined, { sensitivity: "base" }),
+);
