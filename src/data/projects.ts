@@ -66,7 +66,6 @@ export const projects: Project[] = [
     description: "A simple and private spending tracker.",
     category: "other",
     url: "https://spendx.neo21.io",
-    featuredOrder: 2,
   },
 
   {
