@@ -13,10 +13,9 @@ export const ProjectArchive = () => {
 
   return (
     <section className="py-12">
-      <div className="flex flex-wrap items-center gap-y-1 mb-4 text-xs font-medium uppercase tracking-widest">
+      <div className="flex flex-wrap items-center gap-y-1 mb-4 text-xs font-medium uppercase tracking-wider sm:tracking-widest">
         {categories.map((cat, i) => (
           <span key={cat} className="flex items-center">
-            {i > 0 && <span className="mx-2 text-border" aria-hidden="true">/</span>}
             <button
               onClick={() => setFilter(cat)}
               aria-pressed={filter === cat}
@@ -28,6 +27,7 @@ export const ProjectArchive = () => {
             >
               {cat === 'all' ? 'All' : categoryLabels[cat]}
             </button>
+            {i < categories.length - 1 && <span className="mx-1.5 sm:mx-2 text-border" aria-hidden="true">/</span>}
           </span>
         ))}
       </div>
