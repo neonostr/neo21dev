@@ -7,8 +7,8 @@ export interface Project {
   category: ProjectCategory;
   url: string;
   alternativeUrl?: string;
-  featured?: boolean;
-  order: number;
+  /** Set 1, 2, 3… to feature this project in that position. Omit to not feature. */
+  featuredOrder?: number;
 }
 
 export const categoryLabels: Record<ProjectCategory, string> = {
@@ -25,7 +25,7 @@ export const categoryColors: Record<ProjectCategory, string> = {
   other: "bg-muted text-muted-foreground",
 };
 
-// Replace with your actual projects
+// "All Projects" shows projects in exactly this order — move a block up/down to reorder.
 export const projects: Project[] = [
   {
     id: "1",
@@ -34,59 +34,7 @@ export const projects: Project[] = [
     category: "bitcoin",
     url: "https://convy.neo21.io",
     alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqesconvy.nsite.run/",
-    featured: true,
-    order: 1,
-  },
-  {
-    id: "2",
-    name: "WhyBitcoin101",
-    description: "Share the why behind Bitcoin with friends and loved ones.",
-    category: "bitcoin",
-    url: "https://whybitcoin101.com",
-    featured: true,
-    order: 3,
-  },
-  {
-    id: "3",
-    name: "Nostr2RSS",
-    description: "Subscribe to Nostr authors in your RSS reader.",
-    category: "nostr",
-    url: "https://nostr2rss.neo21.io",
-    featured: false,
-    order: 12,
-  },
-  {
-    id: "4",
-    name: "The Ultimate Orange Pill",
-    description: "Helping the world understand why Bitcoin matters, together. Coordinated on Nostr.",
-    category: "bitcoin",
-    url: "https://whybitcoin101.com/mission",
-    order: 9,
-  },
-  {
-    id: "5",
-    name: "Daylight",
-    description: "Know when the sun rises and sets. Track daylight hours anywhere in the world.",
-    category: "other",
-    url: "https://daylight.neo21.io",
-    order: 6,
-  },
-  {
-    id: "6",
-    name: "Youtube Client",
-    description: "Stop the time thieves and reclaim control. Your Feed. Your Rules.",
-    category: "entertainment",
-    url: "https://tube.neo21.io/",
-    alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqestube.nsite.run",
-    order: 11,
-  },
-  {
-    id: "7",
-    name: "Listr",
-    description: "Discover great stuff from people you trust.",
-    category: "nostr",
-    url: "https://listr.neo21.io",
-    order: 8,
+    featuredOrder: 1,
   },
   {
     id: "8",
@@ -94,41 +42,14 @@ export const projects: Project[] = [
     description: "Like notes that contain article URLs on Nostr and get the full article in your RSS reader.",
     category: "nostr",
     url: "https://like2rss.neo21.io",
-    order: 2,
   },
   {
-    id: "9",
-    name: "NostrPad",
-    description:
-      "A private notepad you can access from any device. Log in with your Nostr key and your notes are there.",
-    category: "nostr",
-    url: "https://nostrpad.neo21.io",
-    order: 13,
-  },
-  {
-    id: "10",
-    name: "WTF Happened In 2030",
-    description: "A fictional scenario designed to illustrate the importance of Bitcoin self custody.",
+    id: "2",
+    name: "WhyBitcoin101",
+    description: "Share the why behind Bitcoin with friends and loved ones.",
     category: "bitcoin",
-    url: "https://wtfhappenedin2030.com",
-    order: 10,
-  },
-  {
-    id: "11",
-    name: "Kcal",
-    description: "The world's simplest calorie tracker.",
-    category: "other",
-    url: "https://kcal.neo21.io",
-    alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqeskcal.nsite.run",
-    order: 5,
-  },
-  {
-    id: "12",
-    name: "Nostrpacks",
-    description: "Discover and share curated lists of Nostr users to follow.",
-    category: "nostr",
-    url: "https://nostrpacks.neo21.io",
-    order: 12,
+    url: "https://whybitcoin101.com",
+    featuredOrder: 2,
   },
   {
     id: "13",
@@ -137,8 +58,6 @@ export const projects: Project[] = [
     category: "entertainment",
     url: "https://moviefinder.neo21.io",
     alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqesmoviefinder.nsite.run",
-    featured: false,
-    order: 3,
   },
   {
     id: "14",
@@ -146,11 +65,78 @@ export const projects: Project[] = [
     description: "Track what you watch, wait for, and finish.",
     category: "entertainment",
     url: "https://tvshows.neo21.io",
-    featured: true,
-    order: 4,
+    featuredOrder: 3,
+  },
+  {
+    id: "11",
+    name: "Kcal",
+    description: "The world's simplest calorie tracker.",
+    category: "other",
+    url: "https://kcal.neo21.io",
+    alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqeskcal.nsite.run",
+  },
+  {
+    id: "5",
+    name: "Daylight",
+    description: "Know when the sun rises and sets. Track daylight hours anywhere in the world.",
+    category: "other",
+    url: "https://daylight.neo21.io",
+  },
+  {
+    id: "7",
+    name: "Listr",
+    description: "Discover great stuff from people you trust.",
+    category: "nostr",
+    url: "https://listr.neo21.io",
+  },
+  {
+    id: "4",
+    name: "The Ultimate Orange Pill",
+    description: "Helping the world understand why Bitcoin matters, together. Coordinated on Nostr.",
+    category: "bitcoin",
+    url: "https://whybitcoin101.com/mission",
+  },
+  {
+    id: "10",
+    name: "WTF Happened In 2030",
+    description: "A fictional scenario designed to illustrate the importance of Bitcoin self custody.",
+    category: "bitcoin",
+    url: "https://wtfhappenedin2030.com",
+  },
+  {
+    id: "6",
+    name: "Youtube Client",
+    description: "Stop the time thieves and reclaim control. Your Feed. Your Rules.",
+    category: "entertainment",
+    url: "https://tube.neo21.io/",
+    alternativeUrl: "https://2wajpgqff9og15sbgh308qkp0kint2ig6wuf8nt7bh10j3bqestube.nsite.run",
+  },
+  {
+    id: "3",
+    name: "Nostr2RSS",
+    description: "Subscribe to Nostr authors in your RSS reader.",
+    category: "nostr",
+    url: "https://nostr2rss.neo21.io",
+  },
+  {
+    id: "12",
+    name: "Nostrpacks",
+    description: "Discover and share curated lists of Nostr users to follow.",
+    category: "nostr",
+    url: "https://nostrpacks.neo21.io",
+  },
+  {
+    id: "9",
+    name: "NostrPad",
+    description:
+      "A private notepad you can access from any device. Log in with your Nostr key and your notes are there.",
+    category: "nostr",
+    url: "https://nostrpad.neo21.io",
   },
 ];
 
-export const featuredProjects = projects.filter((p) => p.featured).sort((a, b) => a.order - b.order);
+export const featuredProjects = projects
+  .filter((p) => p.featuredOrder !== undefined)
+  .sort((a, b) => (a.featuredOrder ?? 0) - (b.featuredOrder ?? 0));
 
-export const allProjects = [...projects].sort((a, b) => a.order - b.order);
+export const allProjects = projects;

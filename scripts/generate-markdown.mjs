@@ -37,8 +37,8 @@ const footerSrc = readFileSync(resolve(root, "src/components/landing/Footer.tsx"
 const footerLine = stripTags((footerSrc.match(/<p[^>]*>([\s\S]*?)<\/p>/) || [, ""])[1]);
 
 // --- Build markdown ---
-const sorted = [...projects].sort((a, b) => a.order - b.order);
-const featured = sorted.filter((p) => p.featured);
+const sorted = projects;
+const featured = projects.filter((p) => p.featuredOrder !== undefined).sort((a, b) => a.featuredOrder - b.featuredOrder);
 
 const grouped = { bitcoin: [], entertainment: [], nostr: [], other: [] };
 for (const p of sorted) grouped[p.category]?.push(p);
